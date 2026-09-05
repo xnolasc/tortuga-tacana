@@ -1,5 +1,5 @@
 {
-  "generated_at": 1788641059,
+  "generated_at": 1788650501,
   "levels": {
     "BNB": {
       "ticker": "BNB",
@@ -25,7 +25,7 @@
         "limiting_factor": "riesgo",
         "risk_usd_per_unit": 7.5
       },
-      "computed_at": 1788641059
+      "computed_at": 1788650500
     },
     "UNI": {
       "ticker": "UNI",
@@ -51,7 +51,33 @@
         "limiting_factor": "riesgo",
         "risk_usd_per_unit": 3.0
       },
-      "computed_at": 1788641059
+      "computed_at": 1788650501
+    },
+    "ARB": {
+      "ticker": "ARB",
+      "symbol": "ARBUSDT",
+      "ok": true,
+      "n_atr": 0.01062,
+      "stop_distance": 0.02124,
+      "ref_price": 0.1319,
+      "ticker_capital": 200.0,
+      "system1": {
+        "available": true,
+        "entry": 0.1468,
+        "exit": 0.0831,
+        "unit_shares": 141.24293785,
+        "limiting_factor": "riesgo",
+        "risk_usd_per_unit": 3.0
+      },
+      "system2": {
+        "available": true,
+        "entry": 0.1468,
+        "exit": 0.0722,
+        "unit_shares": 141.24293785,
+        "limiting_factor": "riesgo",
+        "risk_usd_per_unit": 3.0
+      },
+      "computed_at": 1788650501
     }
   }
 }

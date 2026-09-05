@@ -46,5 +46,29 @@
       ],
       "stop": 6.2112
     }
+  },
+  "ARB": {
+    "system1": {
+      "status": "EN_POSICION",
+      "units": [
+        {
+          "entry_price": 0.1782,
+          "shares": 141.24293785,
+          "entry_time": 1788650504
+        }
+      ],
+      "stop": 0.15696
+    },
+    "system2": {
+      "status": "EN_POSICION",
+      "units": [
+        {
+          "entry_price": 0.1782,
+          "shares": 141.24293785,
+          "entry_time": 1788650504
+        }
+      ],
+      "stop": 0.15696
+    }
   }
 }

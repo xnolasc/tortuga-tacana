@@ -14,7 +14,7 @@ de 18+ tickers a la vez.
 import os
 
 # --- Universo de tickers para esta prueba ---
-TICKERS = ["BNB", "UNI"]
+TICKERS = ["BNB", "UNI", "ARB"]
 
 def symbol_for(ticker: str) -> str:
     return f"{ticker}USDT"
@@ -23,6 +23,7 @@ def symbol_for(ticker: str) -> str:
 TICKER_CAPITAL_USD = {
     "BNB": 500.0,
     "UNI": 200.0,
+    "ARB": 200.0,
 }
 
 # --- Riesgo por unidad, como % del capital de ESE ticker (no dinámico

@@ -1,0 +1,44 @@
+{
+  "capital_total_inicial": 200.0,
+  "capital_disponible": 149.6,
+  "posiciones_reservadas": {
+    "ARB_system1": {
+      "shares": 141.24293785,
+      "monto_bruto": 25.17,
+      "comision_entrada": 0.03,
+      "costo_total": 25.200000000000003,
+      "reservado_at": 1788650504
+    },
+    "ARB_system2": {
+      "shares": 141.24293785,
+      "monto_bruto": 25.17,
+      "comision_entrada": 0.03,
+      "costo_total": 25.200000000000003,
+      "reservado_at": 1788650504
+    }
+  },
+  "historial_eventos": [
+    {
+      "evento": "reserva",
+      "ticker": "ARB",
+      "system": "system1",
+      "shares": 141.24293785,
+      "monto_bruto": 25.17,
+      "comision": 0.03,
+      "capital_disponible_despues": 174.8,
+      "timestamp": 1788650504
+    },
+    {
+      "evento": "reserva",
+      "ticker": "ARB",
+      "system": "system2",
+      "shares": 141.24293785,
+      "monto_bruto": 25.17,
+      "comision": 0.03,
+      "capital_disponible_despues": 149.6,
+      "timestamp": 1788650504
+    }
+  ],
+  "comisiones_pagadas_total": 0.06,
+  "updated_at": 1788650504
+}
