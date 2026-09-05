@@ -72,4 +72,4 @@ def ledger_path_for(ticker: str) -> str:
     return os.path.join(BASE_DIR, f"real_ledger_{ticker}.json")
 
 DASHBOARD_PORT = 8897   # distinto a 8898 (paper normal) y 8899 (acciones)
-DASHBOARD_TITLE = "🐢 Tortuga Crypto — Ledger Real (BNB/UNI)"
+DASHBOARD_TITLE = "🐢 Tortuga Tacaña — Ledger Real (BNB/UNI/ARB)"
