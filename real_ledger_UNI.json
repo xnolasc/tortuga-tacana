@@ -1,0 +1,44 @@
+{
+  "capital_total_inicial": 200.0,
+  "capital_disponible": 152.36,
+  "posiciones_reservadas": {
+    "UNI_system1": {
+      "shares": 3.34896182,
+      "monto_bruto": 23.8,
+      "comision_entrada": 0.02,
+      "costo_total": 23.82,
+      "reservado_at": 1788641061
+    },
+    "UNI_system2": {
+      "shares": 3.34896182,
+      "monto_bruto": 23.8,
+      "comision_entrada": 0.02,
+      "costo_total": 23.82,
+      "reservado_at": 1788641061
+    }
+  },
+  "historial_eventos": [
+    {
+      "evento": "reserva",
+      "ticker": "UNI",
+      "system": "system1",
+      "shares": 3.34896182,
+      "monto_bruto": 23.8,
+      "comision": 0.02,
+      "capital_disponible_despues": 176.18,
+      "timestamp": 1788641061
+    },
+    {
+      "evento": "reserva",
+      "ticker": "UNI",
+      "system": "system2",
+      "shares": 3.34896182,
+      "monto_bruto": 23.8,
+      "comision": 0.02,
+      "capital_disponible_despues": 152.36,
+      "timestamp": 1788641061
+    }
+  ],
+  "comisiones_pagadas_total": 0.04,
+  "updated_at": 1788641061
+}

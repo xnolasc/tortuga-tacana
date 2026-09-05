@@ -1,0 +1,50 @@
+{
+  "BNB": {
+    "system1": {
+      "status": "EN_POSICION",
+      "units": [
+        {
+          "entry_price": 771.55,
+          "shares": 0.05390719,
+          "entry_time": 1788641006
+        }
+      ],
+      "stop": 725.174
+    },
+    "system2": {
+      "status": "EN_POSICION",
+      "units": [
+        {
+          "entry_price": 771.55,
+          "shares": 0.05390719,
+          "entry_time": 1788641006
+        }
+      ],
+      "stop": 725.174
+    }
+  },
+  "UNI": {
+    "system1": {
+      "status": "EN_POSICION",
+      "units": [
+        {
+          "entry_price": 7.107,
+          "shares": 3.34896182,
+          "entry_time": 1788641061
+        }
+      ],
+      "stop": 6.2112
+    },
+    "system2": {
+      "status": "EN_POSICION",
+      "units": [
+        {
+          "entry_price": 7.107,
+          "shares": 3.34896182,
+          "entry_time": 1788641061
+        }
+      ],
+      "stop": 6.2112
+    }
+  }
+}

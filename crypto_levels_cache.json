@@ -1,0 +1,57 @@
+{
+  "generated_at": 1788641059,
+  "levels": {
+    "BNB": {
+      "ticker": "BNB",
+      "symbol": "BNBUSDT",
+      "ok": true,
+      "n_atr": 23.188,
+      "stop_distance": 46.376,
+      "ref_price": 721.37,
+      "ticker_capital": 500.0,
+      "system1": {
+        "available": true,
+        "entry": 729.9,
+        "exit": 674.6,
+        "unit_shares": 0.16172158,
+        "limiting_factor": "riesgo",
+        "risk_usd_per_unit": 7.5
+      },
+      "system2": {
+        "available": true,
+        "entry": 729.9,
+        "exit": 600.0,
+        "unit_shares": 0.16172158,
+        "limiting_factor": "riesgo",
+        "risk_usd_per_unit": 7.5
+      },
+      "computed_at": 1788641059
+    },
+    "UNI": {
+      "ticker": "UNI",
+      "symbol": "UNIUSDT",
+      "ok": true,
+      "n_atr": 0.4479,
+      "stop_distance": 0.8958,
+      "ref_price": 6.185,
+      "ticker_capital": 200.0,
+      "system1": {
+        "available": true,
+        "entry": 6.512,
+        "exit": 4.145,
+        "unit_shares": 3.34896182,
+        "limiting_factor": "riesgo",
+        "risk_usd_per_unit": 3.0
+      },
+      "system2": {
+        "available": true,
+        "entry": 6.512,
+        "exit": 3.216,
+        "unit_shares": 3.34896182,
+        "limiting_factor": "riesgo",
+        "risk_usd_per_unit": 3.0
+      },
+      "computed_at": 1788641059
+    }
+  }
+}

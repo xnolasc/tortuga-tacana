@@ -1,0 +1,44 @@
+{
+  "capital_total_inicial": 500.0,
+  "capital_disponible": 416.74,
+  "posiciones_reservadas": {
+    "BNB_system1": {
+      "shares": 0.05390719,
+      "monto_bruto": 41.59,
+      "comision_entrada": 0.04,
+      "costo_total": 41.63,
+      "reservado_at": 1788641006
+    },
+    "BNB_system2": {
+      "shares": 0.05390719,
+      "monto_bruto": 41.59,
+      "comision_entrada": 0.04,
+      "costo_total": 41.63,
+      "reservado_at": 1788641006
+    }
+  },
+  "historial_eventos": [
+    {
+      "evento": "reserva",
+      "ticker": "BNB",
+      "system": "system1",
+      "shares": 0.05390719,
+      "monto_bruto": 41.59,
+      "comision": 0.04,
+      "capital_disponible_despues": 458.37,
+      "timestamp": 1788641006
+    },
+    {
+      "evento": "reserva",
+      "ticker": "BNB",
+      "system": "system2",
+      "shares": 0.05390719,
+      "monto_bruto": 41.59,
+      "comision": 0.04,
+      "capital_disponible_despues": 416.74,
+      "timestamp": 1788641006
+    }
+  ],
+  "comisiones_pagadas_total": 0.08,
+  "updated_at": 1788641006
+}
