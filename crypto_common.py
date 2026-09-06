@@ -21,7 +21,7 @@ def symbol_for(ticker: str) -> str:
 
 # --- Capital REAL (simulado) por ticker -- cada uno con su propia caja ---
 TICKER_CAPITAL_USD = {
-    "BNB": 500.0,
+    "BNB": 200.0,
     "UNI": 200.0,
     "ARB": 200.0,
     "BTC": 200.0,

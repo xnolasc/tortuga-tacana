@@ -1,6 +1,6 @@
 {
-  "capital_total_inicial": 500.0,
-  "capital_disponible": 416.74,
+  "capital_total_inicial": 200.0,
+  "capital_disponible": 116.74,
   "posiciones_reservadas": {
     "BNB_system1": {
       "shares": 0.05390719,
