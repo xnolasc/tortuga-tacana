@@ -1,20 +1,20 @@
 {
   "capital_total_inicial": 200.0,
-  "capital_disponible": 155.48,
+  "capital_disponible": 109.16,
   "posiciones_reservadas": {
     "NEAR_system1": {
-      "shares": 9.31387768,
-      "monto_bruto": 22.24,
-      "comision_entrada": 0.02,
-      "costo_total": 22.26,
-      "unidades": 1
+      "shares": 18.62775536,
+      "monto_bruto": 45.38,
+      "comision_entrada": 0.04,
+      "costo_total": 45.42,
+      "unidades": 2
     },
     "NEAR_system2": {
-      "shares": 9.31387768,
-      "monto_bruto": 22.24,
-      "comision_entrada": 0.02,
-      "costo_total": 22.26,
-      "unidades": 1
+      "shares": 18.62775536,
+      "monto_bruto": 45.38,
+      "comision_entrada": 0.04,
+      "costo_total": 45.42,
+      "unidades": 2
     }
   },
   "historial_eventos": [
@@ -37,8 +37,28 @@
       "comision": 0.02,
       "capital_disponible_despues": 155.48,
       "timestamp": 1788706857
+    },
+    {
+      "evento": "reserva",
+      "ticker": "NEAR",
+      "system": "system1",
+      "shares": 9.31387768,
+      "monto_bruto": 23.14,
+      "comision": 0.02,
+      "capital_disponible_despues": 132.32,
+      "timestamp": 1788732008
+    },
+    {
+      "evento": "reserva",
+      "ticker": "NEAR",
+      "system": "system2",
+      "shares": 9.31387768,
+      "monto_bruto": 23.14,
+      "comision": 0.02,
+      "capital_disponible_despues": 109.16,
+      "timestamp": 1788732008
     }
   ],
-  "comisiones_pagadas_total": 0.04,
-  "updated_at": 1788706857
+  "comisiones_pagadas_total": 0.08,
+  "updated_at": 1788732008
 }
