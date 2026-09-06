@@ -6,15 +6,15 @@
       "shares": 9.31387768,
       "monto_bruto": 22.24,
       "comision_entrada": 0.02,
-      "costo_total": 22.259999999999998,
-      "reservado_at": 1788706857
+      "costo_total": 22.26,
+      "unidades": 1
     },
     "NEAR_system2": {
       "shares": 9.31387768,
       "monto_bruto": 22.24,
       "comision_entrada": 0.02,
-      "costo_total": 22.259999999999998,
-      "reservado_at": 1788706857
+      "costo_total": 22.26,
+      "unidades": 1
     }
   },
   "historial_eventos": [

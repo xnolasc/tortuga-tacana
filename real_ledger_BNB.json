@@ -7,14 +7,14 @@
       "monto_bruto": 41.59,
       "comision_entrada": 0.04,
       "costo_total": 41.63,
-      "reservado_at": 1788641006
+      "unidades": 1
     },
     "BNB_system2": {
       "shares": 0.05390719,
       "monto_bruto": 41.59,
       "comision_entrada": 0.04,
       "costo_total": 41.63,
-      "reservado_at": 1788641006
+      "unidades": 1
     }
   },
   "historial_eventos": [

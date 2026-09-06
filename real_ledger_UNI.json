@@ -3,18 +3,18 @@
   "capital_disponible": 103.1,
   "posiciones_reservadas": {
     "UNI_system1": {
-      "shares": 3.34896182,
-      "monto_bruto": 24.61,
-      "comision_entrada": 0.02,
-      "costo_total": 24.63,
-      "reservado_at": 1788657003
+      "shares": 6.69792364,
+      "monto_bruto": 48.41,
+      "comision_entrada": 0.04,
+      "costo_total": 48.45,
+      "unidades": 2
     },
     "UNI_system2": {
-      "shares": 3.34896182,
-      "monto_bruto": 24.61,
-      "comision_entrada": 0.02,
-      "costo_total": 24.63,
-      "reservado_at": 1788657003
+      "shares": 6.69792364,
+      "monto_bruto": 48.41,
+      "comision_entrada": 0.04,
+      "costo_total": 48.45,
+      "unidades": 2
     }
   },
   "historial_eventos": [

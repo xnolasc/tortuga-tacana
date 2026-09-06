@@ -63,13 +63,24 @@ def try_reserve(ledger, ticker, system, unit_shares_deseado, price, min_notional
 
 def confirm_reserve(ledger, ticker, system, shares, monto_bruto, comision):
     key = f"{ticker}_{system}"
-    costo_total = monto_bruto + comision
-    ledger["capital_disponible"] = round(ledger["capital_disponible"] - costo_total, 2)
+    costo_total_nuevo = monto_bruto + comision
+    ledger["capital_disponible"] = round(ledger["capital_disponible"] - costo_total_nuevo, 2)
     ledger["comisiones_pagadas_total"] = round(ledger["comisiones_pagadas_total"] + comision, 2)
-    ledger["posiciones_reservadas"][key] = {
-        "shares": shares, "monto_bruto": monto_bruto, "comision_entrada": comision,
-        "costo_total": costo_total, "reservado_at": int(time.time()),
-    }
+
+    if key in ledger["posiciones_reservadas"]:
+        existing = ledger["posiciones_reservadas"][key]
+        existing["shares"] = round(existing["shares"] + shares, 8)
+        existing["monto_bruto"] = round(existing["monto_bruto"] + monto_bruto, 2)
+        existing["comision_entrada"] = round(existing["comision_entrada"] + comision, 2)
+        existing["costo_total"] = round(existing["costo_total"] + costo_total_nuevo, 2)
+        existing["unidades"] = existing.get("unidades", 1) + 1
+    else:
+        ledger["posiciones_reservadas"][key] = {
+            "shares": shares, "monto_bruto": monto_bruto, "comision_entrada": comision,
+            "costo_total": costo_total_nuevo, "unidades": 1,
+            "reservado_at": int(time.time()),
+        }
+
     ledger["historial_eventos"].append({
         "evento": "reserva", "ticker": ticker, "system": system,
         "shares": shares, "monto_bruto": monto_bruto, "comision": comision,
