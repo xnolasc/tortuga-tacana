@@ -1,20 +1,20 @@
 {
   "capital_total_inicial": 200.0,
-  "capital_disponible": 149.6,
+  "capital_disponible": 0.0,
   "posiciones_reservadas": {
     "ARB_system1": {
       "shares": 141.24293785,
-      "monto_bruto": 25.17,
+      "monto_bruto": 28.56,
       "comision_entrada": 0.03,
-      "costo_total": 25.200000000000003,
-      "reservado_at": 1788650504
+      "costo_total": 28.59,
+      "reservado_at": 1788681604
     },
     "ARB_system2": {
-      "shares": 141.24293785,
-      "monto_bruto": 25.17,
-      "comision_entrada": 0.03,
-      "costo_total": 25.200000000000003,
-      "reservado_at": 1788650504
+      "shares": 66.94591264,
+      "monto_bruto": 13.54,
+      "comision_entrada": 0.01,
+      "costo_total": 13.549999999999999,
+      "reservado_at": 1788681604
     }
   },
   "historial_eventos": [
@@ -37,8 +37,68 @@
       "comision": 0.03,
       "capital_disponible_despues": 149.6,
       "timestamp": 1788650504
+    },
+    {
+      "evento": "reserva",
+      "ticker": "ARB",
+      "system": "system1",
+      "shares": 141.24293785,
+      "monto_bruto": 26.38,
+      "comision": 0.03,
+      "capital_disponible_despues": 123.19,
+      "timestamp": 1788654009
+    },
+    {
+      "evento": "reserva",
+      "ticker": "ARB",
+      "system": "system2",
+      "shares": 141.24293785,
+      "monto_bruto": 26.38,
+      "comision": 0.03,
+      "capital_disponible_despues": 96.78,
+      "timestamp": 1788654009
+    },
+    {
+      "evento": "reserva",
+      "ticker": "ARB",
+      "system": "system1",
+      "shares": 141.24293785,
+      "monto_bruto": 27.29,
+      "comision": 0.03,
+      "capital_disponible_despues": 69.46,
+      "timestamp": 1788655804
+    },
+    {
+      "evento": "reserva",
+      "ticker": "ARB",
+      "system": "system2",
+      "shares": 141.24293785,
+      "monto_bruto": 27.29,
+      "comision": 0.03,
+      "capital_disponible_despues": 42.14,
+      "timestamp": 1788655804
+    },
+    {
+      "evento": "reserva",
+      "ticker": "ARB",
+      "system": "system1",
+      "shares": 141.24293785,
+      "monto_bruto": 28.56,
+      "comision": 0.03,
+      "capital_disponible_despues": 13.55,
+      "timestamp": 1788681604
+    },
+    {
+      "evento": "reserva",
+      "ticker": "ARB",
+      "system": "system2",
+      "shares": 66.94591264,
+      "monto_bruto": 13.54,
+      "comision": 0.01,
+      "capital_disponible_despues": 0.0,
+      "timestamp": 1788681604
     }
   ],
-  "comisiones_pagadas_total": 0.06,
-  "updated_at": 1788650504
+  "comisiones_pagadas_total": 0.22,
+  "updated_at": 1788681604
 }

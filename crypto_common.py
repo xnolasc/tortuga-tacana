@@ -14,7 +14,7 @@ de 18+ tickers a la vez.
 import os
 
 # --- Universo de tickers para esta prueba ---
-TICKERS = ["BNB", "UNI", "ARB", "BTC", "ETH", "SOL"]
+TICKERS = ["BNB", "UNI", "ARB", "BTC", "ETH", "SOL", "SUI", "NEAR"]
 
 def symbol_for(ticker: str) -> str:
     return f"{ticker}USDT"
@@ -27,6 +27,8 @@ TICKER_CAPITAL_USD = {
     "BTC": 200.0,
     "ETH": 200.0,
     "SOL": 200.0,
+    "SUI": 200.0,
+    "NEAR": 200.0,
 }
 
 # --- Riesgo por unidad, como % del capital de ESE ticker (no dinámico
@@ -75,4 +77,4 @@ def ledger_path_for(ticker: str) -> str:
     return os.path.join(BASE_DIR, f"real_ledger_{ticker}.json")
 
 DASHBOARD_PORT = 8897   # distinto a 8898 (paper normal) y 8899 (acciones)
-DASHBOARD_TITLE = "🐢 Tortuga Tacaña — Ledger Real (BNB/UNI/ARB/BTC/ETH/SOL)"
+DASHBOARD_TITLE = "🐢 Tortuga Tacaña — Ledger Real (BNB/UNI/ARB/BTC/ETH/SOL/SUI/NEAR)"

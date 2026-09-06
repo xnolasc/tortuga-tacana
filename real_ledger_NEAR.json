@@ -1,0 +1,44 @@
+{
+  "capital_total_inicial": 200.0,
+  "capital_disponible": 155.48,
+  "posiciones_reservadas": {
+    "NEAR_system1": {
+      "shares": 9.31387768,
+      "monto_bruto": 22.24,
+      "comision_entrada": 0.02,
+      "costo_total": 22.259999999999998,
+      "reservado_at": 1788706857
+    },
+    "NEAR_system2": {
+      "shares": 9.31387768,
+      "monto_bruto": 22.24,
+      "comision_entrada": 0.02,
+      "costo_total": 22.259999999999998,
+      "reservado_at": 1788706857
+    }
+  },
+  "historial_eventos": [
+    {
+      "evento": "reserva",
+      "ticker": "NEAR",
+      "system": "system1",
+      "shares": 9.31387768,
+      "monto_bruto": 22.24,
+      "comision": 0.02,
+      "capital_disponible_despues": 177.74,
+      "timestamp": 1788706857
+    },
+    {
+      "evento": "reserva",
+      "ticker": "NEAR",
+      "system": "system2",
+      "shares": 9.31387768,
+      "monto_bruto": 22.24,
+      "comision": 0.02,
+      "capital_disponible_despues": 155.48,
+      "timestamp": 1788706857
+    }
+  ],
+  "comisiones_pagadas_total": 0.04,
+  "updated_at": 1788706857
+}

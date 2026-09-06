@@ -31,9 +31,14 @@
           "entry_price": 7.107,
           "shares": 3.34896182,
           "entry_time": 1788641061
+        },
+        {
+          "entry_price": 7.348,
+          "shares": 3.34896182,
+          "entry_time": 1788657003
         }
       ],
-      "stop": 6.2112
+      "stop": 6.4522
     },
     "system2": {
       "status": "EN_POSICION",
@@ -42,9 +47,14 @@
           "entry_price": 7.107,
           "shares": 3.34896182,
           "entry_time": 1788641061
+        },
+        {
+          "entry_price": 7.348,
+          "shares": 3.34896182,
+          "entry_time": 1788657003
         }
       ],
-      "stop": 6.2112
+      "stop": 6.4522
     }
   },
   "ARB": {
@@ -55,9 +65,24 @@
           "entry_price": 0.1782,
           "shares": 141.24293785,
           "entry_time": 1788650504
+        },
+        {
+          "entry_price": 0.1868,
+          "shares": 141.24293785,
+          "entry_time": 1788654009
+        },
+        {
+          "entry_price": 0.1932,
+          "shares": 141.24293785,
+          "entry_time": 1788655804
+        },
+        {
+          "entry_price": 0.2022,
+          "shares": 141.24293785,
+          "entry_time": 1788681604
         }
       ],
-      "stop": 0.15696
+      "stop": 0.18096
     },
     "system2": {
       "status": "EN_POSICION",
@@ -66,9 +91,24 @@
           "entry_price": 0.1782,
           "shares": 141.24293785,
           "entry_time": 1788650504
+        },
+        {
+          "entry_price": 0.1868,
+          "shares": 141.24293785,
+          "entry_time": 1788654009
+        },
+        {
+          "entry_price": 0.1932,
+          "shares": 141.24293785,
+          "entry_time": 1788655804
+        },
+        {
+          "entry_price": 0.2022,
+          "shares": 66.94591264,
+          "entry_time": 1788681604
         }
       ],
-      "stop": 0.15696
+      "stop": 0.18096
     }
   },
   "BTC": {
@@ -93,6 +133,38 @@
     },
     "system2": {
       "status": "ESPERANDO"
+    }
+  },
+  "SUI": {
+    "system1": {
+      "status": "ESPERANDO"
+    },
+    "system2": {
+      "status": "ESPERANDO"
+    }
+  },
+  "NEAR": {
+    "system1": {
+      "status": "EN_POSICION",
+      "units": [
+        {
+          "entry_price": 2.388,
+          "shares": 9.31387768,
+          "entry_time": 1788706857
+        }
+      ],
+      "stop": 2.0659
+    },
+    "system2": {
+      "status": "EN_POSICION",
+      "units": [
+        {
+          "entry_price": 2.388,
+          "shares": 9.31387768,
+          "entry_time": 1788706857
+        }
+      ],
+      "stop": 2.0659
     }
   }
 }
