@@ -42,3 +42,13 @@ Ninguna plata se perdió en ningún momento -- `capital_disponible`
 siempre estuvo bien calculado. El bug era puramente de visualización
 y de cálculo de P&L al momento del cierre (que hubiera dado un número
 equivocado si ARB se hubiera cerrado antes de este fix).
+
+---
+
+# Registro de cambios
+
+**2026-09-06**
+- Agregados TRX (Tron) y XRP (Ripple) a Tortuga Tacaña, $200 cada uno.
+- Título del dashboard actualizado a: BNB/UNI/ARB/BTC/ETH/SOL/SUI/NEAR/TRX/XRP
+- Chequeo de bugs corrido después del alta: 10/10 tickers OK, sin inconsistencias.
+- Capital total simulado del sistema: $2,000 (10 tickers x $200 c/u).
