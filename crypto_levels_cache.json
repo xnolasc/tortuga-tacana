@@ -1,5 +1,5 @@
 {
-  "generated_at": 1788824335,
+  "generated_at": 1788824430,
   "levels": {
     "BNB": {
       "ticker": "BNB",
@@ -25,7 +25,7 @@
         "limiting_factor": "riesgo",
         "risk_usd_per_unit": 3.0
       },
-      "computed_at": 1788824326
+      "computed_at": 1788824421
     },
     "UNI": {
       "ticker": "UNI",
@@ -51,7 +51,7 @@
         "limiting_factor": "riesgo",
         "risk_usd_per_unit": 3.0
       },
-      "computed_at": 1788824327
+      "computed_at": 1788824422
     },
     "BTC": {
       "ticker": "BTC",
@@ -77,7 +77,7 @@
         "limiting_factor": "riesgo",
         "risk_usd_per_unit": 3.0
       },
-      "computed_at": 1788824327
+      "computed_at": 1788824422
     },
     "ETH": {
       "ticker": "ETH",
@@ -103,7 +103,7 @@
         "limiting_factor": "riesgo",
         "risk_usd_per_unit": 3.0
       },
-      "computed_at": 1788824328
+      "computed_at": 1788824423
     },
     "SOL": {
       "ticker": "SOL",
@@ -129,7 +129,7 @@
         "limiting_factor": "riesgo",
         "risk_usd_per_unit": 3.0
       },
-      "computed_at": 1788824328
+      "computed_at": 1788824423
     },
     "SUI": {
       "ticker": "SUI",
@@ -155,7 +155,7 @@
         "limiting_factor": "riesgo",
         "risk_usd_per_unit": 3.0
       },
-      "computed_at": 1788824328
+      "computed_at": 1788824424
     },
     "NEAR": {
       "ticker": "NEAR",
@@ -181,7 +181,7 @@
         "limiting_factor": "riesgo",
         "risk_usd_per_unit": 3.0
       },
-      "computed_at": 1788824329
+      "computed_at": 1788824424
     },
     "TRX": {
       "ticker": "TRX",
@@ -207,7 +207,7 @@
         "limiting_factor": "riesgo",
         "risk_usd_per_unit": 3.0
       },
-      "computed_at": 1788824329
+      "computed_at": 1788824424
     },
     "XRP": {
       "ticker": "XRP",
@@ -233,7 +233,7 @@
         "limiting_factor": "riesgo",
         "risk_usd_per_unit": 3.0
       },
-      "computed_at": 1788824330
+      "computed_at": 1788824425
     },
     "LTC": {
       "ticker": "LTC",
@@ -259,7 +259,7 @@
         "limiting_factor": "riesgo",
         "risk_usd_per_unit": 3.0
       },
-      "computed_at": 1788824330
+      "computed_at": 1788824425
     },
     "ZEC": {
       "ticker": "ZEC",
@@ -285,7 +285,7 @@
         "limiting_factor": "riesgo",
         "risk_usd_per_unit": 3.0
       },
-      "computed_at": 1788824330
+      "computed_at": 1788824426
     },
     "DASH": {
       "ticker": "DASH",
@@ -311,7 +311,7 @@
         "limiting_factor": "riesgo",
         "risk_usd_per_unit": 3.0
       },
-      "computed_at": 1788824331
+      "computed_at": 1788824426
     },
     "INJ": {
       "ticker": "INJ",
@@ -337,7 +337,7 @@
         "limiting_factor": "riesgo",
         "risk_usd_per_unit": 3.0
       },
-      "computed_at": 1788824331
+      "computed_at": 1788824426
     },
     "DOGE": {
       "ticker": "DOGE",
@@ -363,7 +363,7 @@
         "limiting_factor": "riesgo",
         "risk_usd_per_unit": 3.0
       },
-      "computed_at": 1788824332
+      "computed_at": 1788824427
     },
     "DOT": {
       "ticker": "DOT",
@@ -389,7 +389,7 @@
         "limiting_factor": "riesgo",
         "risk_usd_per_unit": 3.0
       },
-      "computed_at": 1788824332
+      "computed_at": 1788824427
     },
     "FET": {
       "ticker": "FET",
@@ -415,7 +415,7 @@
         "limiting_factor": "riesgo",
         "risk_usd_per_unit": 3.0
       },
-      "computed_at": 1788824332
+      "computed_at": 1788824428
     },
     "LINK": {
       "ticker": "LINK",
@@ -441,7 +441,7 @@
         "limiting_factor": "riesgo",
         "risk_usd_per_unit": 3.0
       },
-      "computed_at": 1788824333
+      "computed_at": 1788824428
     },
     "RNDR": {
       "ticker": "RNDR",
@@ -467,7 +467,7 @@
         "limiting_factor": "riesgo",
         "risk_usd_per_unit": 3.0
       },
-      "computed_at": 1788824333
+      "computed_at": 1788824429
     },
     "TAO": {
       "ticker": "TAO",
@@ -493,7 +493,7 @@
         "limiting_factor": "riesgo",
         "risk_usd_per_unit": 3.0
       },
-      "computed_at": 1788824334
+      "computed_at": 1788824429
     },
     "GRT": {
       "ticker": "GRT",
@@ -519,13 +519,7 @@
         "limiting_factor": "riesgo",
         "risk_usd_per_unit": 3.0
       },
-      "computed_at": 1788824334
-    },
-    "AKT": {
-      "ticker": "AKT",
-      "symbol": "AKTUSDT",
-      "ok": false,
-      "error": "400 Client Error: Bad Request for url: https://api.binance.com/api/v3/klines?symbol=AKTUSDT&interval=1d&limit=62"
+      "computed_at": 1788824430
     },
     "IO": {
       "ticker": "IO",
@@ -551,13 +545,7 @@
         "limiting_factor": "riesgo",
         "risk_usd_per_unit": 3.0
       },
-      "computed_at": 1788824335
-    },
-    "ATH": {
-      "ticker": "ATH",
-      "symbol": "ATHUSDT",
-      "ok": false,
-      "error": "400 Client Error: Bad Request for url: https://api.binance.com/api/v3/klines?symbol=ATHUSDT&interval=1d&limit=62"
+      "computed_at": 1788824430
     }
   },
   "familias": [

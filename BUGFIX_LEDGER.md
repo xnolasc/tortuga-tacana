@@ -87,3 +87,12 @@ equivocado si ARB se hubiera cerrado antes de este fix).
 - Con este cambio, el tema IA queda representado en 4 capas del modelo
   de capas propuesto: Computo (RNDR, AKT, IO, ATH), Datos (GRT, LINK),
   Entrenamiento/Inferencia (TAO), Agentes (FET, NEAR).
+
+**2026-09-07 (branch experimento-5-mejoras) -- parte 4**
+- AKT (Akash Network) y ATH (Aethir) confirmados como NO disponibles
+  en Binance (400 Bad Request en /api/v3/klines, y ausentes en el
+  listado completo de exchangeInfo). Removidos de la lista.
+- Queda IO (io.net) como el unico de los 3 tokens de computo GPU
+  adicionales que si existe y funciona en Binance.
+- Total de tickers activos: 21 (BNB/UNI/BTC/ETH/SOL/SUI/NEAR/TRX/XRP/
+  LTC/ZEC/DASH/INJ/DOGE/DOT/FET/LINK/RNDR/TAO/GRT/IO).
