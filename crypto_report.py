@@ -71,7 +71,7 @@ def compute_levels_for_ticker(ticker, candles_cache):
 
     tr_list = compute_true_range(closed[-(ATR_LOOKBACK_DAYS + 1):])
     n_atr = sum(tr_list) / len(tr_list) if tr_list else None
-    if not n_atr or n_atr <= 0:
+    if n_atr is None or n_atr <= 0:
         return {"ticker": ticker, "symbol": symbol, "ok": False, "error": "N invalido"}
     stop_distance = 2.0 * n_atr
 
@@ -99,7 +99,7 @@ def compute_levels_for_ticker(ticker, candles_cache):
 
     return {
         "ticker": ticker, "symbol": symbol, "ok": True,
-        "n_atr": round(n_atr, 6), "stop_distance": round(stop_distance, 6),
+        "n_atr": round(n_atr, 12), "stop_distance": round(stop_distance, 12),
         "ref_price": round(ref_price, 6), "ticker_capital_dinamico": ticker_capital,
         "system1": system1, "system2": system2, "computed_at": int(time.time()),
     }
