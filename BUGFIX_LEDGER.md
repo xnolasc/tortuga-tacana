@@ -58,3 +58,17 @@ equivocado si ARB se hubiera cerrado antes de este fix).
 - Total de tickers en este branch: 19 (13 anteriores + estos 6).
 - Capital total simulado del experimento: $3,800 (19 x $200).
 - Titulo del dashboard actualizado para reflejar 19 tickers.
+
+**2026-09-07 (branch experimento-5-mejoras) -- parte 2**
+- Removido ARB de la lista activa (TICKERS y TICKER_CAPITAL_USD). Su
+  ledger (real_ledger_ARB.json) se conserva como registro historico del
+  trade cerrado (-$12.39), pero ya no participa en recalculos ni compras
+  nuevas.
+- Agregados 3 tokens de IA: RNDR (Render, GPU para IA), TAO (Bittensor,
+  red de machine learning descentralizada), GRT (The Graph, indexado de
+  datos on-chain usado por agentes de IA), $200 cada uno.
+- Total de tickers activos en este branch: 21 (18 anteriores - ARB + 3 nuevos).
+- Capital total simulado activo: $4,200 (21 x $200), mas el historico de ARB.
+- Titulo del dashboard actualizado a "21 tickers".
+- Nota: ya tenia FET, LINK y NEAR relacionados con IA/agentes desde antes;
+  con RNDR/TAO/GRT el tema queda mejor representado (compute, ML, datos).

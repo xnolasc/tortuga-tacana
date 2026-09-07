@@ -1,8 +1,46 @@
 {
   "capital_total_inicial": 200.0,
-  "capital_disponible": 200.0,
-  "posiciones_reservadas": {},
-  "historial_eventos": [],
-  "comisiones_pagadas_total": 0.0,
-  "updated_at": 1788812745
+  "capital_disponible": 161.82,
+  "posiciones_reservadas": {
+    "FET_system1": {
+      "shares": 103.30578512,
+      "monto_bruto": 19.07,
+      "comision_entrada": 0.02,
+      "costo_total": 19.09,
+      "unidades": 1,
+      "reservado_at": 1788813736
+    },
+    "FET_system2": {
+      "shares": 103.30578512,
+      "monto_bruto": 19.07,
+      "comision_entrada": 0.02,
+      "costo_total": 19.09,
+      "unidades": 1,
+      "reservado_at": 1788813736
+    }
+  },
+  "historial_eventos": [
+    {
+      "evento": "reserva",
+      "ticker": "FET",
+      "system": "system1",
+      "shares": 103.30578512,
+      "monto_bruto": 19.07,
+      "comision": 0.02,
+      "capital_disponible_despues": 180.91,
+      "timestamp": 1788813736
+    },
+    {
+      "evento": "reserva",
+      "ticker": "FET",
+      "system": "system2",
+      "shares": 103.30578512,
+      "monto_bruto": 19.07,
+      "comision": 0.02,
+      "capital_disponible_despues": 161.82,
+      "timestamp": 1788813736
+    }
+  ],
+  "comisiones_pagadas_total": 0.04,
+  "updated_at": 1788813736
 }

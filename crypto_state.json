@@ -253,13 +253,53 @@
   },
   "FET": {
     "system1": {
+      "status": "EN_POSICION",
+      "units": [
+        {
+          "entry_price": 0.1846,
+          "shares": 103.30578512,
+          "entry_time": 1788813736
+        }
+      ],
+      "stop": 0.15556
+    },
+    "system2": {
+      "status": "EN_POSICION",
+      "units": [
+        {
+          "entry_price": 0.1846,
+          "shares": 103.30578512,
+          "entry_time": 1788813736
+        }
+      ],
+      "stop": 0.15556
+    }
+  },
+  "LINK": {
+    "system1": {
       "status": "ESPERANDO"
     },
     "system2": {
       "status": "ESPERANDO"
     }
   },
-  "LINK": {
+  "RNDR": {
+    "system1": {
+      "status": "ESPERANDO"
+    },
+    "system2": {
+      "status": "ESPERANDO"
+    }
+  },
+  "TAO": {
+    "system1": {
+      "status": "ESPERANDO"
+    },
+    "system2": {
+      "status": "ESPERANDO"
+    }
+  },
+  "GRT": {
     "system1": {
       "status": "ESPERANDO"
     },

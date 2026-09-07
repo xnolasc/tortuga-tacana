@@ -15,18 +15,20 @@ romper nada, igual que paso antes con MATIC/otros).
 import os
 import json
 
-TICKERS = ["BNB", "UNI", "ARB", "BTC", "ETH", "SOL", "SUI", "NEAR",
+TICKERS = ["BNB", "UNI", "BTC", "ETH", "SOL", "SUI", "NEAR",
            "TRX", "XRP", "LTC", "ZEC", "DASH",
-           "INJ", "DOGE", "PEPE", "DOT", "FET", "LINK"]
+           "INJ", "DOGE", "PEPE", "DOT", "FET", "LINK",
+           "RNDR", "TAO", "GRT"]
 
 def symbol_for(ticker: str) -> str:
     return f"{ticker}USDT"
 
 TICKER_CAPITAL_USD = {
-    "BNB": 200.0, "UNI": 200.0, "ARB": 200.0, "BTC": 200.0, "ETH": 200.0,
+    "BNB": 200.0, "UNI": 200.0, "BTC": 200.0, "ETH": 200.0,
     "SOL": 200.0, "SUI": 200.0, "NEAR": 200.0, "TRX": 200.0, "XRP": 200.0,
     "LTC": 200.0, "ZEC": 200.0, "DASH": 200.0,
     "INJ": 200.0, "DOGE": 200.0, "PEPE": 200.0, "DOT": 200.0, "FET": 200.0, "LINK": 200.0,
+    "RNDR": 200.0, "TAO": 200.0, "GRT": 200.0,
 }
 
 RISK_PCT_PER_UNIT = 0.03
@@ -69,7 +71,7 @@ def ledger_path_for(ticker: str) -> str:
     return os.path.join(BASE_DIR, f"real_ledger_{ticker}.json")
 
 DASHBOARD_PORT = 8897
-DASHBOARD_TITLE = "Tortuga Tacana V2 - 19 tickers - Capital dinamico + Familias + Heat"
+DASHBOARD_TITLE = "Tortuga Tacana V2 - 21 tickers - Capital dinamico + Familias + Heat"
 
 
 def get_dynamic_capital(ticker: str) -> float:
