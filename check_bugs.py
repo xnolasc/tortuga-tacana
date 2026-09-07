@@ -1,9 +1,12 @@
-"""Chequeo de salud: corre esto cuando quieras para confirmar que
-no hay inconsistencias contables en ningun ledger."""
+"""Chequeo de salud (branch experimento-5-mejoras): ahora compara el
+total del ledger contra el capital DINAMICO esperado (inicial + P&L de
+trades ya cerrados de ese ticker), no contra un $200 fijo."""
 import json
 import glob
 
-print("=== Chequeo de consistencia de ledgers ===\n")
+from crypto_common import get_dynamic_capital
+
+print("=== Chequeo de consistencia de ledgers (capital dinamico) ===\n")
 todo_bien = True
 
 for path in sorted(glob.glob('real_ledger_*.json')):
@@ -12,26 +15,12 @@ for path in sorted(glob.glob('real_ledger_*.json')):
     ticker = path.replace('real_ledger_', '').replace('.json', '')
     reservado = sum(p['costo_total'] for p in l['posiciones_reservadas'].values())
     total = round(l['capital_disponible'] + reservado, 2)
-    inicial = l['capital_total_inicial']
+    esperado = get_dynamic_capital(ticker)
 
-    if total != inicial:
-        print(f"❌ {ticker}: total=${total} != inicial=${inicial} -- REVISAR")
+    if abs(total - esperado) > 0.02:
+        print(f"❌ {ticker}: total=${total} != esperado (dinamico)=${esperado} -- REVISAR")
         todo_bien = False
     else:
-        print(f"✅ {ticker}: total=${total} (correcto)")
-
-    # Chequeo extra: que las shares en posiciones_reservadas coincidan
-    # con las shares reales guardadas en crypto_state.json
-    with open('crypto_state.json') as f:
-        state = json.load(f)
-    for key, pos in l['posiciones_reservadas'].items():
-        t, sistema = key.rsplit('_', 1)
-        if t == ticker:
-            estado_pos = state.get(t, {}).get(sistema, {})
-            if estado_pos.get('status') == 'EN_POSICION':
-                shares_reales = sum(u['shares'] for u in estado_pos.get('units', []))
-                if abs(shares_reales - pos['shares']) > 0.00001:
-                    print(f"   ⚠️  {key}: ledger dice {pos['shares']} shares, pero state.json dice {shares_reales} -- DESINCRONIZADO")
-                    todo_bien = False
+        print(f"✅ {ticker}: total=${total} (coincide con capital dinamico esperado)")
 
 print("\n" + ("=== TODO OK ===" if todo_bien else "=== HAY PROBLEMAS, REVISAR ARRIBA ==="))

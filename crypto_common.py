@@ -1,51 +1,38 @@
 """
-crypto_common.py (versión LEDGER)
-Variante del sistema Tortuga Crypto pensada como el paso previo más
-cercano a Binance real: cada ticker tiene su PROPIA caja de capital
-limitado (no infinito como en el paper trading normal), compartida
-entre System 1 y System 2 (pool compartido dentro del mismo ticker).
+crypto_common.py (branch: experimento-5-mejoras)
+Agrega sobre la version base:
+1. Capital dinamico por ticker (get_dynamic_capital)
+2. Riesgo configurable (ya existia, ahora aplicado sobre capital dinamico)
+3. Familias por correlacion (constantes de umbral y limite)
+4. Portfolio heat (limite global de riesgo abierto)
+5. (el polling mas rapido se ajusta en el cron, no en este archivo)
 
-Universo reducido a propósito: solo BNB y UNI, cada uno con su propio
-monto de capital -- para poder observar bien el comportamiento del
-ledger (escalado, capital agotado, liberación al cerrar) sin el ruido
-de 18+ tickers a la vez.
+Tickers nuevos: LTC, ZEC, DASH (se agregan a la lista; si alguno no
+existe en Binance, el pipeline ya maneja eso marcando 'ok': False sin
+romper nada, igual que paso antes con MATIC/otros).
 """
 
 import os
+import json
 
-# --- Universo de tickers para esta prueba ---
-TICKERS = ["BNB", "UNI", "ARB", "BTC", "ETH", "SOL", "SUI", "NEAR", "TRX", "XRP"]
+TICKERS = ["BNB", "UNI", "ARB", "BTC", "ETH", "SOL", "SUI", "NEAR",
+           "TRX", "XRP", "LTC", "ZEC", "DASH"]
 
 def symbol_for(ticker: str) -> str:
     return f"{ticker}USDT"
 
-# --- Capital REAL (simulado) por ticker -- cada uno con su propia caja ---
 TICKER_CAPITAL_USD = {
-    "BNB": 200.0,
-    "UNI": 200.0,
-    "ARB": 200.0,
-    "BTC": 200.0,
-    "ETH": 200.0,
-    "SOL": 200.0,
-    "SUI": 200.0,
-    "NEAR": 200.0,
-    "TRX": 200.0,
-    "XRP": 200.0,
+    "BNB": 200.0, "UNI": 200.0, "ARB": 200.0, "BTC": 200.0, "ETH": 200.0,
+    "SOL": 200.0, "SUI": 200.0, "NEAR": 200.0, "TRX": 200.0, "XRP": 200.0,
+    "LTC": 200.0, "ZEC": 200.0, "DASH": 200.0,
 }
 
-# --- Riesgo por unidad, como % del capital de ESE ticker (no dinámico
-# todavía en esta versión -- se recalcula sobre el capital ORIGINAL de
-# cada ticker, para simplificar el experimento) ---
-RISK_PCT_PER_UNIT = 0.03          # 1% del capital del ticker, por unidad
-RISK_PCT_PER_SYSTEM = RISK_PCT_PER_UNIT / 2   # dividido entre S1 y S2
+RISK_PCT_PER_UNIT = 0.03
+RISK_PCT_PER_SYSTEM = RISK_PCT_PER_UNIT / 2
 
-# --- Comisión real de Binance spot (0.1% por operación, sin BNB para fees) ---
 COMMISSION_PCT = 0.001
-
-# --- Restricción real de Binance: mínimo de orden ---
 MIN_NOTIONAL_USD = 10.0
 
-# --- Parámetros Turtle System 1 y System 2 (idénticos al resto del sistema) ---
 ENTRY_BREAKOUT_DAYS = 20
 EXIT_BREAKOUT_DAYS = 10
 ATR_LOOKBACK_DAYS = 20
@@ -58,13 +45,17 @@ SYSTEM2_EXIT_BREAKOUT_DAYS = 20
 PYRAMID_ADD_INTERVAL_N = 0.5
 MAX_UNITS = 4
 
-# --- Binance API (pública, sin API key) ---
+CORRELATION_LOOKBACK_DAYS = 60
+CORRELATION_THRESHOLD = 0.75
+MAX_UNITS_PER_FAMILY = 6
+
+PORTFOLIO_HEAT_LIMIT_PCT = 0.20
+
 BINANCE_BASE = "https://api.binance.com"
 KLINES_ENDPOINT = "/api/v3/klines"
 TICKER_PRICE_ENDPOINT = "/api/v3/ticker/price"
 BOOK_TICKER_ENDPOINT = "/api/v3/ticker/bookTicker"
 
-# --- Rutas ---
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 LEVELS_CACHE_PATH = os.path.join(BASE_DIR, "crypto_levels_cache.json")
 STATE_PATH = os.path.join(BASE_DIR, "crypto_state.json")
@@ -73,10 +64,20 @@ DAILY_RECALC_LOG = os.path.join(BASE_DIR, "crypto_daily_recalc.log")
 TRADER_LOG = os.path.join(BASE_DIR, "crypto_trader.log")
 
 def ledger_path_for(ticker: str) -> str:
-    """Cada ticker tiene su propio archivo de ledger -- pools separados
-    entre tickers, pero compartido entre System 1 y System 2 dentro de
-    cada uno."""
     return os.path.join(BASE_DIR, f"real_ledger_{ticker}.json")
 
-DASHBOARD_PORT = 8897   # distinto a 8898 (paper normal) y 8899 (acciones)
-DASHBOARD_TITLE = "🐢 Tortuga Tacaña — Ledger Real (BNB/UNI/ARB/BTC/ETH/SOL/SUI/NEAR/TRX/XRP)"
+DASHBOARD_PORT = 8897
+DASHBOARD_TITLE = "Tortuga Tacana V2 - Capital dinamico + Familias + Heat"
+
+
+def get_dynamic_capital(ticker: str) -> float:
+    inicial = TICKER_CAPITAL_USD.get(ticker, 200.0)
+    if not os.path.exists(TRADES_LOG_PATH):
+        return round(inicial, 2)
+    try:
+        with open(TRADES_LOG_PATH) as f:
+            trades = json.load(f)
+    except Exception:
+        return round(inicial, 2)
+    pnl = sum(t["pnl_usd"] for t in trades if t.get("ticker") == ticker)
+    return round(inicial + pnl, 2)

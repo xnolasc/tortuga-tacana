@@ -1,1 +1,28 @@
-[]
+[
+  {
+    "ticker": "ARB",
+    "system": "system1",
+    "entry_price": 0.1901,
+    "exit_price": 0.1779,
+    "shares": 564.9717514,
+    "units": 4,
+    "pnl_usd": -7.11,
+    "result": "PERDIDA",
+    "reason": "stop_loss",
+    "entry_time": 1788650504,
+    "exit_time": 1788752405
+  },
+  {
+    "ticker": "ARB",
+    "system": "system2",
+    "entry_price": 0.188268,
+    "exit_price": 0.1779,
+    "shares": 490.67472619,
+    "units": 4,
+    "pnl_usd": -5.28,
+    "result": "PERDIDA",
+    "reason": "stop_loss",
+    "entry_time": 1788650504,
+    "exit_time": 1788752405
+  }
+]

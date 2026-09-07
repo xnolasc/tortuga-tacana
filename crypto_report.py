@@ -1,11 +1,7 @@
 """
-crypto_report.py (versión LEDGER)
-Igual lógica de System 1 + System 2 que el resto del sistema. La única
-diferencia real: el tamaño "deseado" de cada unidad se calcula sobre el
-capital PROPIO de cada ticker (TICKER_CAPITAL_USD), no sobre un capital
-global compartido -- ese tamaño "deseado" es lo que después el ledger
-va a aprobar completo, escalar, o rechazar según el capital disponible
-real en ese momento.
+crypto_report.py (branch: experimento-5-mejoras)
+Ahora usa capital DINAMICO por ticker (Opcion 1) y calcula FAMILIAS
+por correlacion (Opcion 3), guardandolas en el mismo cache de niveles.
 """
 
 import json
@@ -13,18 +9,18 @@ import time
 import requests
 
 from crypto_common import (
-    TICKERS, symbol_for, TICKER_CAPITAL_USD, RISK_PCT_PER_SYSTEM,
-    MIN_NOTIONAL_USD, ENTRY_BREAKOUT_DAYS, EXIT_BREAKOUT_DAYS,
-    SYSTEM2_ENTRY_BREAKOUT_DAYS, SYSTEM2_EXIT_BREAKOUT_DAYS,
-    ATR_LOOKBACK_DAYS, BINANCE_BASE, KLINES_ENDPOINT, LEVELS_CACHE_PATH,
+    TICKERS, symbol_for, MIN_NOTIONAL_USD, ENTRY_BREAKOUT_DAYS, EXIT_BREAKOUT_DAYS,
+    SYSTEM2_ENTRY_BREAKOUT_DAYS, SYSTEM2_EXIT_BREAKOUT_DAYS, ATR_LOOKBACK_DAYS,
+    RISK_PCT_PER_SYSTEM, BINANCE_BASE, KLINES_ENDPOINT, LEVELS_CACHE_PATH,
+    CORRELATION_LOOKBACK_DAYS, CORRELATION_THRESHOLD, get_dynamic_capital,
 )
 
-KLINES_NEEDED = max(SYSTEM2_ENTRY_BREAKOUT_DAYS, ATR_LOOKBACK_DAYS) + 2
+KLINES_NEEDED = max(SYSTEM2_ENTRY_BREAKOUT_DAYS, ATR_LOOKBACK_DAYS, CORRELATION_LOOKBACK_DAYS) + 2
 
 
-def fetch_daily_klines(symbol: str, limit: int = KLINES_NEEDED):
+def fetch_daily_klines(symbol, limit=KLINES_NEEDED):
     r = requests.get(
-        f"{BINANCE_BASE}{KLINES_ENDPOINT}",
+        BINANCE_BASE + KLINES_ENDPOINT,
         params={"symbol": symbol, "interval": "1d", "limit": limit},
         timeout=10,
     )
@@ -56,14 +52,18 @@ def compute_unit_sizing(stop_distance, ref_price, ticker_capital):
     return round(unit_shares, 8), limiting_factor, round(risk_usd, 2)
 
 
-def compute_levels_for_ticker(ticker: str):
+def compute_levels_for_ticker(ticker, candles_cache):
     symbol = symbol_for(ticker)
-    candles = fetch_daily_klines(symbol)
+    try:
+        candles = fetch_daily_klines(symbol)
+    except Exception as e:
+        return {"ticker": ticker, "symbol": symbol, "ok": False, "error": str(e)}
+    candles_cache[ticker] = candles
 
     min_needed = max(ENTRY_BREAKOUT_DAYS, ATR_LOOKBACK_DAYS + 1) + 1
     if len(candles) < min_needed:
         return {"ticker": ticker, "symbol": symbol, "ok": False,
-                "error": f"Solo {len(candles)} velas, se necesitan {min_needed}"}
+                "error": "Solo " + str(len(candles)) + " velas, se necesitan " + str(min_needed)}
 
     closed = candles[:-1]
     n = len(closed)
@@ -72,10 +72,10 @@ def compute_levels_for_ticker(ticker: str):
     tr_list = compute_true_range(closed[-(ATR_LOOKBACK_DAYS + 1):])
     n_atr = sum(tr_list) / len(tr_list) if tr_list else None
     if not n_atr or n_atr <= 0:
-        return {"ticker": ticker, "symbol": symbol, "ok": False, "error": "N inválido"}
+        return {"ticker": ticker, "symbol": symbol, "ok": False, "error": "N invalido"}
     stop_distance = 2.0 * n_atr
 
-    ticker_capital = TICKER_CAPITAL_USD[ticker]
+    ticker_capital = get_dynamic_capital(ticker)
 
     system1 = None
     if n >= ENTRY_BREAKOUT_DAYS:
@@ -85,7 +85,7 @@ def compute_levels_for_ticker(ticker: str):
         system1 = {"available": True, "entry": round(s1_entry, 6), "exit": round(s1_exit, 6),
                    "unit_shares": shares, "limiting_factor": limit, "risk_usd_per_unit": risk_usd}
     else:
-        system1 = {"available": False, "reason": f"Faltan velas: {n}/{ENTRY_BREAKOUT_DAYS}"}
+        system1 = {"available": False, "reason": "Faltan velas"}
 
     system2 = None
     if n >= SYSTEM2_ENTRY_BREAKOUT_DAYS:
@@ -95,28 +95,82 @@ def compute_levels_for_ticker(ticker: str):
         system2 = {"available": True, "entry": round(s2_entry, 6), "exit": round(s2_exit, 6),
                    "unit_shares": shares, "limiting_factor": limit, "risk_usd_per_unit": risk_usd}
     else:
-        system2 = {"available": False, "reason": f"Faltan velas: {n}/{SYSTEM2_ENTRY_BREAKOUT_DAYS}"}
+        system2 = {"available": False, "reason": "Faltan velas"}
 
     return {
         "ticker": ticker, "symbol": symbol, "ok": True,
         "n_atr": round(n_atr, 6), "stop_distance": round(stop_distance, 6),
-        "ref_price": round(ref_price, 6), "ticker_capital": ticker_capital,
+        "ref_price": round(ref_price, 6), "ticker_capital_dinamico": ticker_capital,
         "system1": system1, "system2": system2, "computed_at": int(time.time()),
     }
 
 
+def _correlation(a, b):
+    n = min(len(a), len(b))
+    if n < 5:
+        return 0.0
+    a, b = a[-n:], b[-n:]
+    mean_a, mean_b = sum(a) / n, sum(b) / n
+    cov = sum((a[i] - mean_a) * (b[i] - mean_b) for i in range(n))
+    var_a = sum((x - mean_a) ** 2 for x in a)
+    var_b = sum((x - mean_b) ** 2 for x in b)
+    if var_a == 0 or var_b == 0:
+        return 0.0
+    return cov / ((var_a ** 0.5) * (var_b ** 0.5))
+
+
+def compute_correlation_groups(candles_cache, threshold):
+    returns = {}
+    for ticker, candles in candles_cache.items():
+        closes = [c["close"] for c in candles]
+        if len(closes) < 6:
+            continue
+        returns[ticker] = [(closes[i] - closes[i - 1]) / closes[i - 1]
+                            for i in range(1, len(closes)) if closes[i - 1] != 0]
+
+    tickers_list = list(returns.keys())
+    assigned = {}
+    groups = []
+    for t in tickers_list:
+        if t in assigned:
+            continue
+        group = [t]
+        assigned[t] = True
+        for t2 in tickers_list:
+            if t2 in assigned:
+                continue
+            c = _correlation(returns[t], returns[t2])
+            if c >= threshold:
+                group.append(t2)
+                assigned[t2] = True
+        groups.append(group)
+    return groups
+
+
 def main():
+    candles_cache = {}
     levels = {}
     for ticker in TICKERS:
         try:
-            levels[ticker] = compute_levels_for_ticker(ticker)
+            levels[ticker] = compute_levels_for_ticker(ticker, candles_cache)
         except Exception as e:
             levels[ticker] = {"ticker": ticker, "ok": False, "error": str(e)}
-        print(f"{ticker}: {levels[ticker]}")
+        print(ticker + ": " + str(levels[ticker]))
+
+    print("")
+    print("Calculando familias por correlacion...")
+    familias = compute_correlation_groups(candles_cache, CORRELATION_THRESHOLD)
+    for i, fam in enumerate(familias):
+        print("  Familia " + str(i+1) + ": " + str(fam))
 
     with open(LEVELS_CACHE_PATH, "w") as f:
-        json.dump({"generated_at": int(time.time()), "levels": levels}, f, indent=2)
-    print(f"\nGuardado en {LEVELS_CACHE_PATH}")
+        json.dump({
+            "generated_at": int(time.time()),
+            "levels": levels,
+            "familias": familias,
+        }, f, indent=2)
+    print("")
+    print("Guardado en " + LEVELS_CACHE_PATH)
 
 
 if __name__ == "__main__":

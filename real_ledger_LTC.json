@@ -1,0 +1,46 @@
+{
+  "capital_total_inicial": 200.0,
+  "capital_disponible": 132.46,
+  "posiciones_reservadas": {
+    "LTC_system1": {
+      "shares": 0.59370671,
+      "monto_bruto": 33.74,
+      "comision_entrada": 0.03,
+      "costo_total": 33.77,
+      "unidades": 1,
+      "reservado_at": 1788791579
+    },
+    "LTC_system2": {
+      "shares": 0.59370671,
+      "monto_bruto": 33.74,
+      "comision_entrada": 0.03,
+      "costo_total": 33.77,
+      "unidades": 1,
+      "reservado_at": 1788791579
+    }
+  },
+  "historial_eventos": [
+    {
+      "evento": "reserva",
+      "ticker": "LTC",
+      "system": "system1",
+      "shares": 0.59370671,
+      "monto_bruto": 33.74,
+      "comision": 0.03,
+      "capital_disponible_despues": 166.23,
+      "timestamp": 1788791579
+    },
+    {
+      "evento": "reserva",
+      "ticker": "LTC",
+      "system": "system2",
+      "shares": 0.59370671,
+      "monto_bruto": 33.74,
+      "comision": 0.03,
+      "capital_disponible_despues": 132.46,
+      "timestamp": 1788791579
+    }
+  ],
+  "comisiones_pagadas_total": 0.06,
+  "updated_at": 1788791579
+}

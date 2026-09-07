@@ -59,56 +59,10 @@
   },
   "ARB": {
     "system1": {
-      "status": "EN_POSICION",
-      "units": [
-        {
-          "entry_price": 0.1782,
-          "shares": 141.24293785,
-          "entry_time": 1788650504
-        },
-        {
-          "entry_price": 0.1868,
-          "shares": 141.24293785,
-          "entry_time": 1788654009
-        },
-        {
-          "entry_price": 0.1932,
-          "shares": 141.24293785,
-          "entry_time": 1788655804
-        },
-        {
-          "entry_price": 0.2022,
-          "shares": 141.24293785,
-          "entry_time": 1788681604
-        }
-      ],
-      "stop": 0.18096
+      "status": "ESPERANDO"
     },
     "system2": {
-      "status": "EN_POSICION",
-      "units": [
-        {
-          "entry_price": 0.1782,
-          "shares": 141.24293785,
-          "entry_time": 1788650504
-        },
-        {
-          "entry_price": 0.1868,
-          "shares": 141.24293785,
-          "entry_time": 1788654009
-        },
-        {
-          "entry_price": 0.1932,
-          "shares": 141.24293785,
-          "entry_time": 1788655804
-        },
-        {
-          "entry_price": 0.2022,
-          "shares": 66.94591264,
-          "entry_time": 1788681604
-        }
-      ],
-      "stop": 0.18096
+      "status": "ESPERANDO"
     }
   },
   "BTC": {
@@ -186,6 +140,46 @@
     }
   },
   "XRP": {
+    "system1": {
+      "status": "ESPERANDO"
+    },
+    "system2": {
+      "status": "ESPERANDO"
+    }
+  },
+  "LTC": {
+    "system1": {
+      "status": "EN_POSICION",
+      "units": [
+        {
+          "entry_price": 56.83,
+          "shares": 0.59370671,
+          "entry_time": 1788791579
+        }
+      ],
+      "stop": 51.777
+    },
+    "system2": {
+      "status": "EN_POSICION",
+      "units": [
+        {
+          "entry_price": 56.83,
+          "shares": 0.59370671,
+          "entry_time": 1788791579
+        }
+      ],
+      "stop": 51.777
+    }
+  },
+  "ZEC": {
+    "system1": {
+      "status": "ESPERANDO"
+    },
+    "system2": {
+      "status": "ESPERANDO"
+    }
+  },
+  "DASH": {
     "system1": {
       "status": "ESPERANDO"
     },

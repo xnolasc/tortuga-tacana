@@ -1,16 +1,8 @@
 """
-crypto_paper_trader.py (versión LEDGER)
-Igual máquina de estados (System 1 + System 2, pirámide, stop dinámico)
-que el resto del sistema -- pero ahora, en vez de comprar el tamaño
-"ideal" sin restricción, consulta el ledger REAL de cada ticker antes
-de comprar: si el capital de ese ticker (compartido entre S1 y S2)
-alcanza, compra completo; si alcanza parcial, ESCALA hacia abajo; si no
-alcanza ni el mínimo, se salta la señal. Al cerrar, libera el capital
-de vuelta al ledger de ese ticker, con la comisión de salida aplicada.
-
-100% simulado -- ningún precio real de Binance se toca para comprar/
-vender de verdad, solo se CONSULTA el precio público (igual que el
-resto del sistema).
+crypto_paper_trader.py (branch: experimento-5-mejoras)
+Agrega 2 chequeos ANTES de comprar o agregar unidad de piramide:
+  - OPCION 3: limite de unidades por familia correlacionada
+  - OPCION 4: limite de portfolio heat (riesgo total abierto)
 """
 
 import json
@@ -21,7 +13,8 @@ from crypto_common import (
     TICKERS, symbol_for, SKIP_AFTER_WINNER, PYRAMID_ADD_INTERVAL_N, MAX_UNITS,
     TICKER_CAPITAL_USD, COMMISSION_PCT, MIN_NOTIONAL_USD,
     LEVELS_CACHE_PATH, STATE_PATH, TRADES_LOG_PATH, TRADER_LOG,
-    ledger_path_for,
+    ledger_path_for, MAX_UNITS_PER_FAMILY, PORTFOLIO_HEAT_LIMIT_PCT,
+    get_dynamic_capital,
 )
 from crypto_price_feed import get_precise_price
 import real_ledger as rl
@@ -42,7 +35,7 @@ def save_json(path, data):
 
 
 def log(msg):
-    line = f"[{time.strftime('%Y-%m-%d %H:%M:%S')}] {msg}"
+    line = "[" + time.strftime('%Y-%m-%d %H:%M:%S') + "] " + msg
     print(line)
     with open(TRADER_LOG, "a") as f:
         f.write(line + "\n")
@@ -57,6 +50,48 @@ def get_last_trade_result(trades, ticker, system):
 
 def empty_position():
     return {"status": "ESPERANDO"}
+
+
+def build_family_map(familias):
+    m = {}
+    for i, fam in enumerate(familias):
+        for t in fam:
+            m[t] = i
+    return m
+
+
+def count_units_in_family(state, family_map, ticker):
+    fam_id = family_map.get(ticker)
+    if fam_id is None:
+        return 0
+    total_unidades = 0
+    for t, fid in family_map.items():
+        if fid != fam_id:
+            continue
+        for system in SYSTEMS:
+            pos = state.get(t, {}).get(system, {})
+            if pos.get("status") == "EN_POSICION":
+                total_unidades += len(pos.get("units", []))
+    return total_unidades
+
+
+def compute_portfolio_heat(state, levels):
+    total_risk = 0.0
+    for ticker, systems in state.items():
+        lvl = levels.get(ticker, {})
+        ref_price = lvl.get("ref_price")
+        for system in SYSTEMS:
+            pos = systems.get(system, {})
+            if pos.get("status") == "EN_POSICION":
+                shares = sum(u["shares"] for u in pos.get("units", []))
+                stop = pos.get("stop")
+                if ref_price is not None and stop is not None:
+                    total_risk += shares * max(ref_price - stop, 0)
+    return round(total_risk, 2)
+
+
+def total_system_capital():
+    return round(sum(get_dynamic_capital(t) for t in TICKERS), 2)
 
 
 def close_position_with_ledger(ledger, ticker, system, pos, price, reason, trades):
@@ -76,25 +111,34 @@ def close_position_with_ledger(ledger, ticker, system, pos, price, reason, trade
         "reason": reason,
         "entry_time": units[0]["entry_time"], "exit_time": int(time.time()),
     })
-    log(f"{ticker}/{system}: {reason.upper()} -> vende {round(total_shares,6)} unidades "
-        f"@ {price} (P&L neto con comisiones: ${pnl_neto})")
+    log(ticker + "/" + system + ": " + reason.upper() + " -> vende " + str(round(total_shares,6)) + " @ " + str(price) + " (P&L neto: $" + str(pnl_neto) + ")")
     return empty_position()
 
 
 def main():
     cache = load_json(LEVELS_CACHE_PATH, None)
     if not cache:
-        log("No existe crypto_levels_cache.json -- corré crypto_report.py primero.")
+        log("No existe crypto_levels_cache.json -- corre crypto_report.py primero.")
         return
 
-    default_state = {t: {s: empty_position() for s in SYSTEMS} for t in TICKERS}
+    familias = cache.get("familias", [])
+    family_map = build_family_map(familias)
+
+    default_state = {}
+    for t in TICKERS:
+        default_state[t] = {}
+        for s in SYSTEMS:
+            default_state[t][s] = empty_position()
     state = load_json(STATE_PATH, default_state)
     trades = load_json(TRADES_LOG_PATH, [])
+
+    heat_actual = compute_portfolio_heat(state, cache["levels"])
+    heat_limite = round(total_system_capital() * PORTFOLIO_HEAT_LIMIT_PCT, 2)
+    log("Portfolio heat actual: $" + str(heat_actual) + " / limite: $" + str(heat_limite))
 
     for ticker in TICKERS:
         levels = cache["levels"].get(ticker)
         if not levels or not levels.get("ok"):
-            log(f"{ticker}: sin niveles válidos, se salta.")
             continue
 
         n_atr = levels["n_atr"]
@@ -103,15 +147,16 @@ def main():
         symbol = symbol_for(ticker)
         price_info = get_precise_price(symbol)
         if not price_info["ok"]:
-            log(f"{ticker}: no se pudo obtener precio ({price_info['error']}), se salta.")
             continue
         price = price_info["last_price"]
 
         ledger_path = ledger_path_for(ticker)
-        ledger = rl.load_ledger(ledger_path, TICKER_CAPITAL_USD[ticker])
+        ledger = rl.load_ledger(ledger_path, TICKER_CAPITAL_USD.get(ticker, 200.0))
 
         if ticker not in state:
-            state[ticker] = {s: empty_position() for s in SYSTEMS}
+            state[ticker] = {}
+            for s in SYSTEMS:
+                state[ticker][s] = empty_position()
 
         ledger_changed = False
 
@@ -130,8 +175,16 @@ def main():
                 if price >= sys_levels["entry"]:
                     unit_shares_deseado = sys_levels["unit_shares"]
                     if unit_shares_deseado <= 0:
-                        log(f"{ticker}/{system}: señal pero unit_shares=0 "
-                            f"({sys_levels['limiting_factor']}), se salta.")
+                        continue
+
+                    unidades_familia = count_units_in_family(state, family_map, ticker)
+                    if unidades_familia >= MAX_UNITS_PER_FAMILY:
+                        log(ticker + "/" + system + ": FAMILIA LLENA, se salta.")
+                        continue
+
+                    riesgo_nueva = unit_shares_deseado * stop_distance
+                    if heat_actual + riesgo_nueva > heat_limite:
+                        log(ticker + "/" + system + ": PORTFOLIO HEAT se pasaria, se salta.")
                         continue
 
                     shares_ok, monto_ok, comision_ok, motivo = rl.try_reserve(
@@ -139,13 +192,11 @@ def main():
                         MIN_NOTIONAL_USD, COMMISSION_PCT)
 
                     if motivo == "sin_capital":
-                        log(f"{ticker}/{system}: señal de entrada pero SIN CAPITAL "
-                            f"disponible en el ledger de {ticker} (disponible: "
-                            f"${ledger['capital_disponible']}), se salta.")
                         continue
 
                     rl.confirm_reserve(ledger, ticker, system, shares_ok, monto_ok, comision_ok)
                     ledger_changed = True
+                    heat_actual += shares_ok * stop_distance
 
                     entry_time = int(time.time())
                     state[ticker][system] = {
@@ -153,10 +204,8 @@ def main():
                         "units": [{"entry_price": price, "shares": shares_ok, "entry_time": entry_time}],
                         "stop": round(price - stop_distance, 6),
                     }
-                    nota = "" if motivo == "completo" else " (ESCALADO por falta de capital)"
-                    log(f"{ticker}/{system}: COMPRA unidad 1 de {shares_ok} @ {price}{nota} "
-                        f"(stop={round(price - stop_distance, 6)}, capital disponible después: "
-                        f"${ledger['capital_disponible']})")
+                    nota = "" if motivo == "completo" else " (ESCALADO)"
+                    log(ticker + "/" + system + ": COMPRA unidad 1 de " + str(shares_ok) + " @ " + str(price) + nota)
 
             elif pos["status"] == "EN_POSICION":
                 units = pos["units"]
@@ -179,22 +228,27 @@ def main():
                     add_trigger = last_unit_price + PYRAMID_ADD_INTERVAL_N * n_atr
                     unit_shares_deseado = sys_levels["unit_shares"]
                     if price >= add_trigger and unit_shares_deseado > 0:
+                        unidades_familia = count_units_in_family(state, family_map, ticker)
+                        if unidades_familia >= MAX_UNITS_PER_FAMILY:
+                            continue
+                        riesgo_nueva = unit_shares_deseado * stop_distance
+                        if heat_actual + riesgo_nueva > heat_limite:
+                            continue
+
                         shares_ok, monto_ok, comision_ok, motivo = rl.try_reserve(
                             ledger, ticker, system, unit_shares_deseado, price,
                             MIN_NOTIONAL_USD, COMMISSION_PCT)
                         if motivo == "sin_capital":
-                            log(f"{ticker}/{system}: pirámide quiere agregar pero SIN CAPITAL, se salta el add.")
                             continue
                         rl.confirm_reserve(ledger, ticker, system, shares_ok, monto_ok, comision_ok)
                         ledger_changed = True
+                        heat_actual += shares_ok * stop_distance
 
                         units.append({"entry_price": price, "shares": shares_ok,
                                       "entry_time": int(time.time())})
                         new_stop = round(price - stop_distance, 6)
                         state[ticker][system] = {"status": "EN_POSICION", "units": units, "stop": new_stop}
-                        nota = "" if motivo == "completo" else " (ESCALADO)"
-                        log(f"{ticker}/{system}: AGREGA unidad {len(units)}/{MAX_UNITS} de "
-                            f"{shares_ok}{nota} @ {price} (nuevo stop={new_stop})")
+                        log(ticker + "/" + system + ": AGREGA unidad " + str(len(units)) + "/" + str(MAX_UNITS))
 
         if ledger_changed:
             rl.save_ledger(ledger_path, ledger)
