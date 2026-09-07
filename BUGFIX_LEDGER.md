@@ -52,3 +52,9 @@ equivocado si ARB se hubiera cerrado antes de este fix).
 - Título del dashboard actualizado a: BNB/UNI/ARB/BTC/ETH/SOL/SUI/NEAR/TRX/XRP
 - Chequeo de bugs corrido después del alta: 10/10 tickers OK, sin inconsistencias.
 - Capital total simulado del sistema: $2,000 (10 tickers x $200 c/u).
+
+**2026-09-07 (branch experimento-5-mejoras)**
+- Agregados 6 tickers nuevos: INJ, DOGE, PEPE, DOT, FET, LINK, $200 cada uno.
+- Total de tickers en este branch: 19 (13 anteriores + estos 6).
+- Capital total simulado del experimento: $3,800 (19 x $200).
+- Titulo del dashboard actualizado para reflejar 19 tickers.

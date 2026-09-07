@@ -186,5 +186,85 @@
     "system2": {
       "status": "ESPERANDO"
     }
+  },
+  "INJ": {
+    "system1": {
+      "status": "EN_POSICION",
+      "units": [
+        {
+          "entry_price": 6.314,
+          "shares": 3.5465185,
+          "entry_time": 1788812741
+        }
+      ],
+      "stop": 5.4681
+    },
+    "system2": {
+      "status": "EN_POSICION",
+      "units": [
+        {
+          "entry_price": 6.314,
+          "shares": 3.5465185,
+          "entry_time": 1788812741
+        }
+      ],
+      "stop": 5.4681
+    }
+  },
+  "DOGE": {
+    "system1": {
+      "status": "ESPERANDO"
+    },
+    "system2": {
+      "status": "ESPERANDO"
+    }
+  },
+  "PEPE": {
+    "system1": {
+      "status": "ESPERANDO"
+    },
+    "system2": {
+      "status": "ESPERANDO"
+    }
+  },
+  "DOT": {
+    "system1": {
+      "status": "EN_POSICION",
+      "units": [
+        {
+          "entry_price": 1.053,
+          "shares": 25.2312868,
+          "entry_time": 1788812744
+        }
+      ],
+      "stop": 0.9341
+    },
+    "system2": {
+      "status": "EN_POSICION",
+      "units": [
+        {
+          "entry_price": 1.053,
+          "shares": 25.2312868,
+          "entry_time": 1788812744
+        }
+      ],
+      "stop": 0.9341
+    }
+  },
+  "FET": {
+    "system1": {
+      "status": "ESPERANDO"
+    },
+    "system2": {
+      "status": "ESPERANDO"
+    }
+  },
+  "LINK": {
+    "system1": {
+      "status": "ESPERANDO"
+    },
+    "system2": {
+      "status": "ESPERANDO"
+    }
   }
 }
