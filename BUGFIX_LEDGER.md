@@ -72,3 +72,18 @@ equivocado si ARB se hubiera cerrado antes de este fix).
 - Titulo del dashboard actualizado a "21 tickers".
 - Nota: ya tenia FET, LINK y NEAR relacionados con IA/agentes desde antes;
   con RNDR/TAO/GRT el tema queda mejor representado (compute, ML, datos).
+
+**2026-09-07 (branch experimento-5-mejoras) -- parte 3**
+- Removido PEPE de la lista activa (tenia bug de precision numerica
+  irresoluble en la practica: N tan chico que las unidades quedaban en
+  millones de tokens, aunque el fix de precision evito el crash).
+  Su ledger (real_ledger_PEPE.json) se conserva como historico.
+- Agregados 3 tokens de computo GPU descentralizado (Capa 2 del modelo
+  de capas de IA): AKT (Akash Network), IO (io.net), ATH (Aethir),
+  $200 cada uno.
+- Total de tickers activos: 23 (21 anteriores - PEPE + estos 3).
+- Capital total simulado activo: $4,600 (23 x $200).
+- Titulo del dashboard actualizado a "23 tickers".
+- Con este cambio, el tema IA queda representado en 4 capas del modelo
+  de capas propuesto: Computo (RNDR, AKT, IO, ATH), Datos (GRT, LINK),
+  Entrenamiento/Inferencia (TAO), Agentes (FET, NEAR).

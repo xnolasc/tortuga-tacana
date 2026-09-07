@@ -306,5 +306,13 @@
     "system2": {
       "status": "ESPERANDO"
     }
+  },
+  "IO": {
+    "system1": {
+      "status": "ESPERANDO"
+    },
+    "system2": {
+      "status": "ESPERANDO"
+    }
   }
 }
