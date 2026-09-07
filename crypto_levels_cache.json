@@ -1,175 +1,175 @@
 {
-  "generated_at": 1788706848,
+  "generated_at": 1788739921,
   "levels": {
     "BNB": {
       "ticker": "BNB",
       "symbol": "BNBUSDT",
       "ok": true,
-      "n_atr": 25.8935,
-      "stop_distance": 51.787,
-      "ref_price": 766.53,
-      "ticker_capital": 500.0,
+      "n_atr": 26.982,
+      "stop_distance": 53.964,
+      "ref_price": 753.0,
+      "ticker_capital": 200.0,
       "system1": {
         "available": true,
         "entry": 780.64,
         "exit": 674.6,
-        "unit_shares": 0.14482399,
+        "unit_shares": 0.05559262,
         "limiting_factor": "riesgo",
-        "risk_usd_per_unit": 7.5
+        "risk_usd_per_unit": 3.0
       },
       "system2": {
         "available": true,
         "entry": 780.64,
         "exit": 600.0,
-        "unit_shares": 0.14482399,
+        "unit_shares": 0.05559262,
         "limiting_factor": "riesgo",
-        "risk_usd_per_unit": 7.5
+        "risk_usd_per_unit": 3.0
       },
-      "computed_at": 1788706845
+      "computed_at": 1788739917
     },
     "UNI": {
       "ticker": "UNI",
       "symbol": "UNIUSDT",
       "ok": true,
-      "n_atr": 0.49865,
-      "stop_distance": 0.9973,
-      "ref_price": 7.048,
+      "n_atr": 0.52535,
+      "stop_distance": 1.0507,
+      "ref_price": 7.295,
       "ticker_capital": 200.0,
       "system1": {
         "available": true,
-        "entry": 7.251,
-        "exit": 4.315,
-        "unit_shares": 3.00812193,
+        "entry": 7.483,
+        "exit": 4.348,
+        "unit_shares": 2.85523936,
         "limiting_factor": "riesgo",
         "risk_usd_per_unit": 3.0
       },
       "system2": {
         "available": true,
-        "entry": 7.251,
+        "entry": 7.483,
         "exit": 3.227,
-        "unit_shares": 3.00812193,
+        "unit_shares": 2.85523936,
         "limiting_factor": "riesgo",
         "risk_usd_per_unit": 3.0
       },
-      "computed_at": 1788706846
+      "computed_at": 1788739917
     },
     "ARB": {
       "ticker": "ARB",
       "symbol": "ARBUSDT",
       "ok": true,
-      "n_atr": 0.013185,
-      "stop_distance": 0.02637,
-      "ref_price": 0.1772,
+      "n_atr": 0.01453,
+      "stop_distance": 0.02906,
+      "ref_price": 0.1893,
       "ticker_capital": 200.0,
       "system1": {
         "available": true,
-        "entry": 0.1831,
+        "entry": 0.2066,
         "exit": 0.0831,
-        "unit_shares": 113.76564278,
+        "unit_shares": 103.23468685,
         "limiting_factor": "riesgo",
         "risk_usd_per_unit": 3.0
       },
       "system2": {
         "available": true,
-        "entry": 0.1831,
-        "exit": 0.0734,
-        "unit_shares": 113.76564278,
+        "entry": 0.2066,
+        "exit": 0.0736,
+        "unit_shares": 103.23468685,
         "limiting_factor": "riesgo",
         "risk_usd_per_unit": 3.0
       },
-      "computed_at": 1788706846
+      "computed_at": 1788739918
     },
     "BTC": {
       "ticker": "BTC",
       "symbol": "BTCUSDT",
       "ok": true,
-      "n_atr": 2909.3965,
-      "stop_distance": 5818.793,
-      "ref_price": 79831.75,
+      "n_atr": 2882.8005,
+      "stop_distance": 5765.601,
+      "ref_price": 80341.83,
       "ticker_capital": 200.0,
       "system1": {
         "available": true,
         "entry": 82300.0,
         "exit": 76264.0,
-        "unit_shares": 0.00051557,
+        "unit_shares": 0.00052033,
         "limiting_factor": "riesgo",
         "risk_usd_per_unit": 3.0
       },
       "system2": {
         "available": true,
         "entry": 82300.0,
-        "exit": 62751.1,
-        "unit_shares": 0.00051557,
+        "exit": 64027.85,
+        "unit_shares": 0.00052033,
         "limiting_factor": "riesgo",
         "risk_usd_per_unit": 3.0
       },
-      "computed_at": 1788706846
+      "computed_at": 1788739918
     },
     "ETH": {
       "ticker": "ETH",
       "symbol": "ETHUSDT",
       "ok": true,
-      "n_atr": 121.638,
-      "stop_distance": 243.276,
-      "ref_price": 2480.34,
+      "n_atr": 122.5895,
+      "stop_distance": 245.179,
+      "ref_price": 2514.48,
       "ticker_capital": 200.0,
       "system1": {
         "available": true,
         "entry": 2566.53,
         "exit": 2356.41,
-        "unit_shares": 0.01233167,
+        "unit_shares": 0.01223596,
         "limiting_factor": "riesgo",
         "risk_usd_per_unit": 3.0
       },
       "system2": {
         "available": true,
         "entry": 2566.53,
-        "exit": 1872.46,
-        "unit_shares": 0.01233167,
+        "exit": 1885.78,
+        "unit_shares": 0.01223596,
         "limiting_factor": "riesgo",
         "risk_usd_per_unit": 3.0
       },
-      "computed_at": 1788706847
+      "computed_at": 1788739919
     },
     "SOL": {
       "ticker": "SOL",
       "symbol": "SOLUSDT",
       "ok": true,
-      "n_atr": 6.1535,
-      "stop_distance": 12.307,
-      "ref_price": 103.18,
+      "n_atr": 6.2735,
+      "stop_distance": 12.547,
+      "ref_price": 106.55,
       "ticker_capital": 200.0,
       "system1": {
         "available": true,
         "entry": 110.6,
         "exit": 97.38,
-        "unit_shares": 0.24376371,
+        "unit_shares": 0.23910098,
         "limiting_factor": "riesgo",
         "risk_usd_per_unit": 3.0
       },
       "system2": {
         "available": true,
         "entry": 110.6,
-        "exit": 74.43,
-        "unit_shares": 0.24376371,
+        "exit": 75.2,
+        "unit_shares": 0.23910098,
         "limiting_factor": "riesgo",
         "risk_usd_per_unit": 3.0
       },
-      "computed_at": 1788706847
+      "computed_at": 1788739919
     },
     "SUI": {
       "ticker": "SUI",
       "symbol": "SUIUSDT",
       "ok": true,
-      "n_atr": 0.062875,
-      "stop_distance": 0.12575,
-      "ref_price": 0.7951,
+      "n_atr": 0.064085,
+      "stop_distance": 0.12817,
+      "ref_price": 0.8118,
       "ticker_capital": 200.0,
       "system1": {
         "available": true,
         "entry": 0.954,
         "exit": 0.6969,
-        "unit_shares": 23.85685885,
+        "unit_shares": 23.40641336,
         "limiting_factor": "riesgo",
         "risk_usd_per_unit": 3.0
       },
@@ -177,37 +177,89 @@
         "available": true,
         "entry": 0.954,
         "exit": 0.6354,
-        "unit_shares": 23.85685885,
+        "unit_shares": 23.40641336,
         "limiting_factor": "riesgo",
         "risk_usd_per_unit": 3.0
       },
-      "computed_at": 1788706848
+      "computed_at": 1788739920
     },
     "NEAR": {
       "ticker": "NEAR",
       "symbol": "NEARUSDT",
       "ok": true,
-      "n_atr": 0.16105,
-      "stop_distance": 0.3221,
-      "ref_price": 2.192,
+      "n_atr": 0.17455,
+      "stop_distance": 0.3491,
+      "ref_price": 2.439,
       "ticker_capital": 200.0,
       "system1": {
         "available": true,
-        "entry": 2.289,
+        "entry": 2.498,
         "exit": 1.779,
-        "unit_shares": 9.31387768,
+        "unit_shares": 8.59352621,
         "limiting_factor": "riesgo",
         "risk_usd_per_unit": 3.0
       },
       "system2": {
         "available": true,
-        "entry": 2.289,
+        "entry": 2.498,
         "exit": 1.564,
-        "unit_shares": 9.31387768,
+        "unit_shares": 8.59352621,
         "limiting_factor": "riesgo",
         "risk_usd_per_unit": 3.0
       },
-      "computed_at": 1788706848
+      "computed_at": 1788739920
+    },
+    "TRX": {
+      "ticker": "TRX",
+      "symbol": "TRXUSDT",
+      "ok": true,
+      "n_atr": 0.005565,
+      "stop_distance": 0.01113,
+      "ref_price": 0.3352,
+      "ticker_capital": 200.0,
+      "system1": {
+        "available": true,
+        "entry": 0.3502,
+        "exit": 0.3217,
+        "unit_shares": 269.54177898,
+        "limiting_factor": "riesgo",
+        "risk_usd_per_unit": 3.0
+      },
+      "system2": {
+        "available": true,
+        "entry": 0.3502,
+        "exit": 0.3217,
+        "unit_shares": 269.54177898,
+        "limiting_factor": "riesgo",
+        "risk_usd_per_unit": 3.0
+      },
+      "computed_at": 1788739921
+    },
+    "XRP": {
+      "ticker": "XRP",
+      "symbol": "XRPUSDT",
+      "ok": true,
+      "n_atr": 0.107835,
+      "stop_distance": 0.21567,
+      "ref_price": 1.4235,
+      "ticker_capital": 200.0,
+      "system1": {
+        "available": true,
+        "entry": 1.6999,
+        "exit": 1.3098,
+        "unit_shares": 13.91014049,
+        "limiting_factor": "riesgo",
+        "risk_usd_per_unit": 3.0
+      },
+      "system2": {
+        "available": true,
+        "entry": 1.6999,
+        "exit": 0.9888,
+        "unit_shares": 13.91014049,
+        "limiting_factor": "riesgo",
+        "risk_usd_per_unit": 3.0
+      },
+      "computed_at": 1788739921
     }
   }
 }
