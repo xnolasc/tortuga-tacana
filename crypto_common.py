@@ -72,8 +72,8 @@ TRADER_LOG = os.path.join(BASE_DIR, "crypto_trader.log")
 def ledger_path_for(ticker: str) -> str:
     return os.path.join(BASE_DIR, f"real_ledger_{ticker}.json")
 
-DASHBOARD_PORT = 8897
-DASHBOARD_TITLE = "Tortuga Tacana V2 - 21 tickers - Capital dinamico + Familias + Heat"
+DASHBOARD_PORT = 8895
+DASHBOARD_TITLE = "Tortuga Tacana Pool Dennis - 21 tickers, 1 pool unico"
 
 
 def get_dynamic_capital(ticker: str) -> float:

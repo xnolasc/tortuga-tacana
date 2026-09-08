@@ -75,7 +75,7 @@ def compute_levels_for_ticker(ticker, candles_cache):
         return {"ticker": ticker, "symbol": symbol, "ok": False, "error": "N invalido"}
     stop_distance = 2.0 * n_atr
 
-    ticker_capital = get_dynamic_capital(ticker)
+    ticker_capital = capital_total  # POOL compartido, no caja por ticker
 
     system1 = None
     if n >= ENTRY_BREAKOUT_DAYS:
@@ -148,11 +148,15 @@ def compute_correlation_groups(candles_cache, threshold):
 
 
 def main():
+    pool = load_pool()
+    capital_total = pool["capital_total_real_o_simulado"]
+    es_real = pool["es_balance_real"]
+    print(f"Capital total del pool: ${capital_total:.2f} ({"REAL de Binance" if es_real else "SIMULADO"})")
     candles_cache = {}
     levels = {}
     for ticker in TICKERS:
         try:
-            levels[ticker] = compute_levels_for_ticker(ticker, candles_cache)
+            levels[ticker] = compute_levels_for_ticker(ticker, candles_cache, capital_total)
         except Exception as e:
             levels[ticker] = {"ticker": ticker, "ok": False, "error": str(e)}
         print(ticker + ": " + str(levels[ticker]))

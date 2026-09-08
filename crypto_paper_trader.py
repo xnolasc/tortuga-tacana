@@ -17,7 +17,7 @@ from crypto_common import (
     get_dynamic_capital,
 )
 from crypto_price_feed import get_precise_price
-import real_ledger as rl
+import pool_ledger as rl
 
 SYSTEMS = ["system1", "system2"]
 
@@ -251,7 +251,7 @@ def main():
                         log(ticker + "/" + system + ": AGREGA unidad " + str(len(units)) + "/" + str(MAX_UNITS))
 
         if ledger_changed:
-            rl.save_ledger(ledger_path, ledger)
+            rl.save_pool(ledger)
 
     save_json(STATE_PATH, state)
     save_json(TRADES_LOG_PATH, trades)

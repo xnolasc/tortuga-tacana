@@ -1,21 +1,21 @@
 {
   "capital_total_inicial": 200.0,
-  "capital_disponible": 155.18,
+  "capital_disponible": 108.78,
   "posiciones_reservadas": {
     "INJ_system1": {
-      "shares": 3.5465185,
-      "monto_bruto": 22.39,
-      "comision_entrada": 0.02,
-      "costo_total": 22.41,
-      "unidades": 1,
+      "shares": 7.093037,
+      "monto_bruto": 45.57,
+      "comision_entrada": 0.04,
+      "costo_total": 45.61,
+      "unidades": 2,
       "reservado_at": 1788812741
     },
     "INJ_system2": {
-      "shares": 3.5465185,
-      "monto_bruto": 22.39,
-      "comision_entrada": 0.02,
-      "costo_total": 22.41,
-      "unidades": 1,
+      "shares": 7.093037,
+      "monto_bruto": 45.57,
+      "comision_entrada": 0.04,
+      "costo_total": 45.61,
+      "unidades": 2,
       "reservado_at": 1788812741
     }
   },
@@ -39,8 +39,28 @@
       "comision": 0.02,
       "capital_disponible_despues": 155.18,
       "timestamp": 1788812741
+    },
+    {
+      "evento": "reserva",
+      "ticker": "INJ",
+      "system": "system1",
+      "shares": 3.5465185,
+      "monto_bruto": 23.18,
+      "comision": 0.02,
+      "capital_disponible_despues": 131.98,
+      "timestamp": 1788832812
+    },
+    {
+      "evento": "reserva",
+      "ticker": "INJ",
+      "system": "system2",
+      "shares": 3.5465185,
+      "monto_bruto": 23.18,
+      "comision": 0.02,
+      "capital_disponible_despues": 108.78,
+      "timestamp": 1788832812
     }
   ],
-  "comisiones_pagadas_total": 0.04,
-  "updated_at": 1788812741
+  "comisiones_pagadas_total": 0.08,
+  "updated_at": 1788832812
 }
