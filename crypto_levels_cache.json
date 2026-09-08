@@ -1,0 +1,111 @@
+{
+  "generated_at": 1788888095,
+  "levels": {
+    "BNB": {
+      "ticker": "BNB",
+      "ok": false,
+      "error": "compute_levels_for_ticker() takes 2 positional arguments but 3 were given"
+    },
+    "UNI": {
+      "ticker": "UNI",
+      "ok": false,
+      "error": "compute_levels_for_ticker() takes 2 positional arguments but 3 were given"
+    },
+    "BTC": {
+      "ticker": "BTC",
+      "ok": false,
+      "error": "compute_levels_for_ticker() takes 2 positional arguments but 3 were given"
+    },
+    "ETH": {
+      "ticker": "ETH",
+      "ok": false,
+      "error": "compute_levels_for_ticker() takes 2 positional arguments but 3 were given"
+    },
+    "SOL": {
+      "ticker": "SOL",
+      "ok": false,
+      "error": "compute_levels_for_ticker() takes 2 positional arguments but 3 were given"
+    },
+    "SUI": {
+      "ticker": "SUI",
+      "ok": false,
+      "error": "compute_levels_for_ticker() takes 2 positional arguments but 3 were given"
+    },
+    "NEAR": {
+      "ticker": "NEAR",
+      "ok": false,
+      "error": "compute_levels_for_ticker() takes 2 positional arguments but 3 were given"
+    },
+    "TRX": {
+      "ticker": "TRX",
+      "ok": false,
+      "error": "compute_levels_for_ticker() takes 2 positional arguments but 3 were given"
+    },
+    "XRP": {
+      "ticker": "XRP",
+      "ok": false,
+      "error": "compute_levels_for_ticker() takes 2 positional arguments but 3 were given"
+    },
+    "LTC": {
+      "ticker": "LTC",
+      "ok": false,
+      "error": "compute_levels_for_ticker() takes 2 positional arguments but 3 were given"
+    },
+    "ZEC": {
+      "ticker": "ZEC",
+      "ok": false,
+      "error": "compute_levels_for_ticker() takes 2 positional arguments but 3 were given"
+    },
+    "DASH": {
+      "ticker": "DASH",
+      "ok": false,
+      "error": "compute_levels_for_ticker() takes 2 positional arguments but 3 were given"
+    },
+    "INJ": {
+      "ticker": "INJ",
+      "ok": false,
+      "error": "compute_levels_for_ticker() takes 2 positional arguments but 3 were given"
+    },
+    "DOGE": {
+      "ticker": "DOGE",
+      "ok": false,
+      "error": "compute_levels_for_ticker() takes 2 positional arguments but 3 were given"
+    },
+    "DOT": {
+      "ticker": "DOT",
+      "ok": false,
+      "error": "compute_levels_for_ticker() takes 2 positional arguments but 3 were given"
+    },
+    "FET": {
+      "ticker": "FET",
+      "ok": false,
+      "error": "compute_levels_for_ticker() takes 2 positional arguments but 3 were given"
+    },
+    "LINK": {
+      "ticker": "LINK",
+      "ok": false,
+      "error": "compute_levels_for_ticker() takes 2 positional arguments but 3 were given"
+    },
+    "RNDR": {
+      "ticker": "RNDR",
+      "ok": false,
+      "error": "compute_levels_for_ticker() takes 2 positional arguments but 3 were given"
+    },
+    "TAO": {
+      "ticker": "TAO",
+      "ok": false,
+      "error": "compute_levels_for_ticker() takes 2 positional arguments but 3 were given"
+    },
+    "GRT": {
+      "ticker": "GRT",
+      "ok": false,
+      "error": "compute_levels_for_ticker() takes 2 positional arguments but 3 were given"
+    },
+    "IO": {
+      "ticker": "IO",
+      "ok": false,
+      "error": "compute_levels_for_ticker() takes 2 positional arguments but 3 were given"
+    }
+  },
+  "familias": []
+}

@@ -7,6 +7,7 @@ por correlacion (Opcion 3), guardandolas en el mismo cache de niveles.
 import json
 import time
 import requests
+from pool_ledger import load_pool
 
 from crypto_common import (
     TICKERS, symbol_for, MIN_NOTIONAL_USD, ENTRY_BREAKOUT_DAYS, EXIT_BREAKOUT_DAYS,
