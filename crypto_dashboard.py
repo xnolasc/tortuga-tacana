@@ -18,14 +18,14 @@ from crypto_common import (
     LEVELS_CACHE_PATH, STATE_PATH, TRADES_LOG_PATH, ledger_path_for,
 )
 from crypto_price_feed import get_precise_prices
-import real_ledger as rl
+import pool_ledger as rl
 
 REFRESH_SECONDS = 10
 SYSTEMS = ["system1", "system2"]
 SYSTEM_LABEL = {"system1": "S1 (20d/10d)", "system2": "S2 (55d/20d)"}
 
 _cache_lock = threading.Lock()
-_cache = {"status_rows": [], "results": {}, "ledgers": {}, "updated_at": None}
+_cache = {"status_rows": [], "results": {}, "pool_summary": {}, "updated_at": None}
 
 
 def load_json(path, default):
@@ -44,10 +44,8 @@ def recompute():
     symbols = [symbol_for(t) for t in TICKERS]
     prices = get_precise_prices(symbols)
 
-    ledgers = {}
-    for ticker in TICKERS:
-        ledger = rl.load_ledger(ledger_path_for(ticker), TICKER_CAPITAL_USD[ticker])
-        ledgers[ticker] = rl.get_summary(ledger)
+    pool = rl.load_pool()
+    pool_summary = rl.get_summary(pool)
 
     status_rows = []
     for ticker in TICKERS:
@@ -98,7 +96,7 @@ def recompute():
     with _cache_lock:
         _cache["status_rows"] = status_rows
         _cache["results"] = results
-        _cache["ledgers"] = ledgers
+        _cache["pool_summary"] = pool_summary
         _cache["updated_at"] = time.strftime("%Y-%m-%d %H:%M:%S")
 
 
@@ -121,18 +119,17 @@ def render_html():
     with _cache_lock:
         rows = _cache["status_rows"]
         results = _cache["results"]
-        ledgers = _cache["ledgers"]
+        pool_summary = _cache["pool_summary"]
         updated_at = _cache["updated_at"]
 
-    ledger_cards = []
-    for ticker in TICKERS:
-        l = ledgers.get(ticker, {})
-        ledger_cards.append(f"""
-        <div class="card">
-          <div class="label">Ledger {ticker}</div>
-          <div class="value">${fmt(l.get('capital_disponible'), 2)}</div>
-          <div class="dim">de ${fmt(l.get('capital_total_inicial'), 0)} inicial · reservado: ${fmt(l.get('capital_reservado_en_posiciones'), 2)} · comisiones pagadas: ${fmt(l.get('comisiones_pagadas_total'), 2)}</div>
-        </div>""")
+    fuente_txt = "REAL de Binance" if pool_summary.get("es_balance_real") else "SIMULADO -- falta API Key"
+    fuente_color = "green" if pool_summary.get("es_balance_real") else "red"
+    ledger_cards = [f"""
+    <div class="card" style="min-width:100%;">
+      <div class="label">Pool unico compartido (21 tickers, diseño Dennis)</div>
+      <div class="value">${fmt(pool_summary.get('capital_disponible'), 2)}</div>
+      <div class="dim">de ${fmt(pool_summary.get('capital_total'), 0)} total (<span class="{fuente_color}">{fuente_txt}</span>) · reservado: ${fmt(pool_summary.get('capital_reservado_en_posiciones'), 2)} · comisiones pagadas: ${fmt(pool_summary.get('comisiones_pagadas_total'), 2)} · posiciones abiertas: {pool_summary.get('cantidad_posiciones_abiertas', 0)}</div>
+    </div>"""]
 
     status_trs = []
     for r in rows:
