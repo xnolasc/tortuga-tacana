@@ -392,5 +392,37 @@
       ],
       "stop": 1.637
     }
+  },
+  "VET": {
+    "system1": {
+      "status": "EN_POSICION",
+      "units": [
+        {
+          "entry_price": 0.008078,
+          "shares": 58517.55526658,
+          "entry_time": 1788899147
+        }
+      ],
+      "stop": 0.007001
+    },
+    "system2": {
+      "status": "EN_POSICION",
+      "units": [
+        {
+          "entry_price": 0.008078,
+          "shares": 57257.67176621,
+          "entry_time": 1788899147
+        }
+      ],
+      "stop": 0.007001
+    }
+  },
+  "ETC": {
+    "system1": {
+      "status": "ESPERANDO"
+    },
+    "system2": {
+      "status": "ESPERANDO"
+    }
   }
 }

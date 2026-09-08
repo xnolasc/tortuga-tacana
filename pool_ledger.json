@@ -47,6 +47,22 @@
       "costo_total": 670.3199999999999,
       "unidades": 1,
       "reservado_at": 1788898770
+    },
+    "VET_system1": {
+      "shares": 58517.55526658,
+      "monto_bruto": 472.7,
+      "comision_entrada": 0.47,
+      "costo_total": 473.17,
+      "unidades": 1,
+      "reservado_at": 1788899147
+    },
+    "VET_system2": {
+      "shares": 57257.67176621,
+      "monto_bruto": 462.53,
+      "comision_entrada": 0.46,
+      "costo_total": 462.98999999999995,
+      "unidades": 1,
+      "reservado_at": 1788899147
     }
   },
   "historial_eventos": [
@@ -109,11 +125,31 @@
       "comision": 0.67,
       "capital_disponible_despues": 936.16,
       "timestamp": 1788898770
+    },
+    {
+      "evento": "reserva",
+      "ticker": "VET",
+      "system": "system1",
+      "shares": 58517.55526658,
+      "monto_bruto": 472.7,
+      "comision": 0.47,
+      "capital_disponible_despues": 462.99,
+      "timestamp": 1788899147
+    },
+    {
+      "evento": "reserva",
+      "ticker": "VET",
+      "system": "system2",
+      "shares": 57257.67176621,
+      "monto_bruto": 462.53,
+      "comision": 0.46,
+      "capital_disponible_despues": 0.0,
+      "timestamp": 1788899147
     }
   ],
-  "comisiones_pagadas_total": 3.26,
+  "comisiones_pagadas_total": 4.19,
   "capital_total_real_o_simulado": 4200.0,
   "es_balance_real": false,
-  "capital_disponible": 936.16,
-  "updated_at": 1788898770
+  "capital_disponible": 0.0,
+  "updated_at": 1788899147
 }

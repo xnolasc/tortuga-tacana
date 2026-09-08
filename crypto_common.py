@@ -15,11 +15,11 @@ romper nada, igual que paso antes con MATIC/otros).
 import os
 import json
 
-TICKERS = ["BNB", "UNI", "BTC", "ETH", "SOL", "SUI", "NEAR",
-           "TRX", "XRP", "LTC", "ZEC", "DASH",
-           "INJ", "DOGE", "DOT", "FET", "LINK",
+TICKERS = ["BNB", "UNI", "BTC", "ETH", "SOL", "NEAR",
+           "XRP", "LTC", "ZEC", "DASH",
+           "INJ", "DOT", "FET", "LINK",
            "RNDR", "TAO", "GRT",
-           "IO", "FF", "ATOM"]
+           "IO", "FF", "ATOM", "VET", "ETC"]
 
 def symbol_for(ticker: str) -> str:
     return f"{ticker}USDT"
