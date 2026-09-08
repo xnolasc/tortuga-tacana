@@ -1,5 +1,5 @@
 {
-  "generated_at": 1788899129,
+  "generated_at": 1788905939,
   "levels": {
     "BNB": {
       "ticker": "BNB",
@@ -25,7 +25,7 @@
         "limiting_factor": "riesgo",
         "risk_usd_per_unit": 63.0
       },
-      "computed_at": 1788899121
+      "computed_at": 1788905931
     },
     "UNI": {
       "ticker": "UNI",
@@ -51,7 +51,7 @@
         "limiting_factor": "riesgo",
         "risk_usd_per_unit": 63.0
       },
-      "computed_at": 1788899121
+      "computed_at": 1788905931
     },
     "BTC": {
       "ticker": "BTC",
@@ -77,7 +77,7 @@
         "limiting_factor": "riesgo",
         "risk_usd_per_unit": 63.0
       },
-      "computed_at": 1788899121
+      "computed_at": 1788905932
     },
     "ETH": {
       "ticker": "ETH",
@@ -103,7 +103,7 @@
         "limiting_factor": "riesgo",
         "risk_usd_per_unit": 63.0
       },
-      "computed_at": 1788899122
+      "computed_at": 1788905932
     },
     "SOL": {
       "ticker": "SOL",
@@ -129,7 +129,7 @@
         "limiting_factor": "riesgo",
         "risk_usd_per_unit": 63.0
       },
-      "computed_at": 1788899122
+      "computed_at": 1788905932
     },
     "NEAR": {
       "ticker": "NEAR",
@@ -155,7 +155,7 @@
         "limiting_factor": "riesgo",
         "risk_usd_per_unit": 63.0
       },
-      "computed_at": 1788899123
+      "computed_at": 1788905933
     },
     "XRP": {
       "ticker": "XRP",
@@ -181,7 +181,7 @@
         "limiting_factor": "riesgo",
         "risk_usd_per_unit": 63.0
       },
-      "computed_at": 1788899123
+      "computed_at": 1788905933
     },
     "LTC": {
       "ticker": "LTC",
@@ -207,7 +207,7 @@
         "limiting_factor": "riesgo",
         "risk_usd_per_unit": 63.0
       },
-      "computed_at": 1788899123
+      "computed_at": 1788905934
     },
     "ZEC": {
       "ticker": "ZEC",
@@ -233,7 +233,7 @@
         "limiting_factor": "riesgo",
         "risk_usd_per_unit": 63.0
       },
-      "computed_at": 1788899124
+      "computed_at": 1788905934
     },
     "DASH": {
       "ticker": "DASH",
@@ -259,7 +259,7 @@
         "limiting_factor": "riesgo",
         "risk_usd_per_unit": 63.0
       },
-      "computed_at": 1788899124
+      "computed_at": 1788905934
     },
     "INJ": {
       "ticker": "INJ",
@@ -285,7 +285,7 @@
         "limiting_factor": "riesgo",
         "risk_usd_per_unit": 63.0
       },
-      "computed_at": 1788899125
+      "computed_at": 1788905935
     },
     "DOT": {
       "ticker": "DOT",
@@ -311,7 +311,7 @@
         "limiting_factor": "riesgo",
         "risk_usd_per_unit": 63.0
       },
-      "computed_at": 1788899125
+      "computed_at": 1788905935
     },
     "FET": {
       "ticker": "FET",
@@ -337,7 +337,7 @@
         "limiting_factor": "riesgo",
         "risk_usd_per_unit": 63.0
       },
-      "computed_at": 1788899125
+      "computed_at": 1788905936
     },
     "LINK": {
       "ticker": "LINK",
@@ -363,7 +363,7 @@
         "limiting_factor": "riesgo",
         "risk_usd_per_unit": 63.0
       },
-      "computed_at": 1788899126
+      "computed_at": 1788905936
     },
     "RNDR": {
       "ticker": "RNDR",
@@ -389,7 +389,7 @@
         "limiting_factor": "riesgo",
         "risk_usd_per_unit": 63.0
       },
-      "computed_at": 1788899126
+      "computed_at": 1788905936
     },
     "TAO": {
       "ticker": "TAO",
@@ -415,7 +415,7 @@
         "limiting_factor": "riesgo",
         "risk_usd_per_unit": 63.0
       },
-      "computed_at": 1788899127
+      "computed_at": 1788905937
     },
     "GRT": {
       "ticker": "GRT",
@@ -441,7 +441,7 @@
         "limiting_factor": "riesgo",
         "risk_usd_per_unit": 63.0
       },
-      "computed_at": 1788899127
+      "computed_at": 1788905937
     },
     "IO": {
       "ticker": "IO",
@@ -467,7 +467,7 @@
         "limiting_factor": "riesgo",
         "risk_usd_per_unit": 63.0
       },
-      "computed_at": 1788899127
+      "computed_at": 1788905938
     },
     "FF": {
       "ticker": "FF",
@@ -493,7 +493,7 @@
         "limiting_factor": "riesgo",
         "risk_usd_per_unit": 63.0
       },
-      "computed_at": 1788899128
+      "computed_at": 1788905938
     },
     "ATOM": {
       "ticker": "ATOM",
@@ -519,7 +519,7 @@
         "limiting_factor": "riesgo",
         "risk_usd_per_unit": 63.0
       },
-      "computed_at": 1788899128
+      "computed_at": 1788905938
     },
     "VET": {
       "ticker": "VET",
@@ -545,7 +545,7 @@
         "limiting_factor": "riesgo",
         "risk_usd_per_unit": 63.0
       },
-      "computed_at": 1788899129
+      "computed_at": 1788905939
     },
     "ETC": {
       "ticker": "ETC",
@@ -571,7 +571,7 @@
         "limiting_factor": "riesgo",
         "risk_usd_per_unit": 63.0
       },
-      "computed_at": 1788899129
+      "computed_at": 1788905939
     }
   },
   "familias": [
