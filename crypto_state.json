@@ -424,5 +424,77 @@
     "system2": {
       "status": "ESPERANDO"
     }
+  },
+  "COHR": {
+    "system1": {
+      "status": "ESPERANDO"
+    },
+    "system2": {
+      "status": "ESPERANDO"
+    }
+  },
+  "MRVL": {
+    "system1": {
+      "status": "ESPERANDO"
+    },
+    "system2": {
+      "status": "ESPERANDO"
+    }
+  },
+  "AXTI": {
+    "system1": {
+      "status": "ESPERANDO"
+    },
+    "system2": {
+      "status": "ESPERANDO"
+    }
+  },
+  "LITE": {
+    "system1": {
+      "status": "ESPERANDO"
+    },
+    "system2": {
+      "status": "ESPERANDO"
+    }
+  },
+  "PLTR": {
+    "system1": {
+      "status": "ESPERANDO"
+    },
+    "system2": {
+      "status": "ESPERANDO"
+    }
+  },
+  "AAOI": {
+    "system1": {
+      "status": "ESPERANDO"
+    },
+    "system2": {
+      "status": "ESPERANDO"
+    }
+  },
+  "NVDA": {
+    "system1": {
+      "status": "ESPERANDO"
+    },
+    "system2": {
+      "status": "ESPERANDO"
+    }
+  },
+  "FN": {
+    "system1": {
+      "status": "ESPERANDO"
+    },
+    "system2": {
+      "status": "ESPERANDO"
+    }
+  },
+  "SPCX": {
+    "system1": {
+      "status": "ESPERANDO"
+    },
+    "system2": {
+      "status": "ESPERANDO"
+    }
   }
 }

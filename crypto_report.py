@@ -7,6 +7,7 @@ por correlacion (Opcion 3), guardandolas en el mismo cache de niveles.
 import json
 import time
 import requests
+import yfinance as yf
 from pool_ledger import load_pool
 
 from crypto_common import (
@@ -33,6 +34,16 @@ def fetch_daily_klines(symbol, limit=KLINES_NEEDED):
     } for k in raw]
 
 
+def fetch_yahoo_klines(ticker, days_needed=60):
+    try:
+        stock = yf.Ticker(ticker)
+        hist = stock.history(period=f"{days_needed + 30}d")
+        return [{"open": float(r["Open"]), "high": float(r["High"]),
+                 "low": float(r["Low"]), "close": float(r["Close"])} for _, r in hist.iterrows()]
+    except Exception:
+        return []
+
+
 def compute_true_range(candles):
     tr_list = []
     for i in range(1, len(candles)):
@@ -57,8 +68,10 @@ def compute_levels_for_ticker(ticker, candles_cache, capital_total):
     symbol = symbol_for(ticker)
     try:
         candles = fetch_daily_klines(symbol)
-    except Exception as e:
-        return {"ticker": ticker, "symbol": symbol, "ok": False, "error": str(e)}
+    except Exception:
+        candles = fetch_yahoo_klines(ticker)
+        if not candles:
+            return {"ticker": ticker, "symbol": symbol, "ok": False, "error": "Binance no tiene el simbolo, Yahoo tampoco respondio"}
     candles_cache[ticker] = candles
 
     min_needed = max(ENTRY_BREAKOUT_DAYS, ATR_LOOKBACK_DAYS + 1) + 1

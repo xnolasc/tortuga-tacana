@@ -1,5 +1,5 @@
 {
-  "generated_at": 1788905939,
+  "generated_at": 1788906229,
   "levels": {
     "BNB": {
       "ticker": "BNB",
@@ -25,7 +25,7 @@
         "limiting_factor": "riesgo",
         "risk_usd_per_unit": 63.0
       },
-      "computed_at": 1788905931
+      "computed_at": 1788906216
     },
     "UNI": {
       "ticker": "UNI",
@@ -51,7 +51,7 @@
         "limiting_factor": "riesgo",
         "risk_usd_per_unit": 63.0
       },
-      "computed_at": 1788905931
+      "computed_at": 1788906216
     },
     "BTC": {
       "ticker": "BTC",
@@ -77,7 +77,7 @@
         "limiting_factor": "riesgo",
         "risk_usd_per_unit": 63.0
       },
-      "computed_at": 1788905932
+      "computed_at": 1788906217
     },
     "ETH": {
       "ticker": "ETH",
@@ -103,7 +103,7 @@
         "limiting_factor": "riesgo",
         "risk_usd_per_unit": 63.0
       },
-      "computed_at": 1788905932
+      "computed_at": 1788906217
     },
     "SOL": {
       "ticker": "SOL",
@@ -129,7 +129,7 @@
         "limiting_factor": "riesgo",
         "risk_usd_per_unit": 63.0
       },
-      "computed_at": 1788905932
+      "computed_at": 1788906217
     },
     "NEAR": {
       "ticker": "NEAR",
@@ -155,7 +155,7 @@
         "limiting_factor": "riesgo",
         "risk_usd_per_unit": 63.0
       },
-      "computed_at": 1788905933
+      "computed_at": 1788906218
     },
     "XRP": {
       "ticker": "XRP",
@@ -181,7 +181,7 @@
         "limiting_factor": "riesgo",
         "risk_usd_per_unit": 63.0
       },
-      "computed_at": 1788905933
+      "computed_at": 1788906218
     },
     "LTC": {
       "ticker": "LTC",
@@ -207,7 +207,7 @@
         "limiting_factor": "riesgo",
         "risk_usd_per_unit": 63.0
       },
-      "computed_at": 1788905934
+      "computed_at": 1788906219
     },
     "ZEC": {
       "ticker": "ZEC",
@@ -233,7 +233,7 @@
         "limiting_factor": "riesgo",
         "risk_usd_per_unit": 63.0
       },
-      "computed_at": 1788905934
+      "computed_at": 1788906219
     },
     "DASH": {
       "ticker": "DASH",
@@ -259,7 +259,7 @@
         "limiting_factor": "riesgo",
         "risk_usd_per_unit": 63.0
       },
-      "computed_at": 1788905934
+      "computed_at": 1788906220
     },
     "INJ": {
       "ticker": "INJ",
@@ -285,7 +285,7 @@
         "limiting_factor": "riesgo",
         "risk_usd_per_unit": 63.0
       },
-      "computed_at": 1788905935
+      "computed_at": 1788906220
     },
     "DOT": {
       "ticker": "DOT",
@@ -311,7 +311,7 @@
         "limiting_factor": "riesgo",
         "risk_usd_per_unit": 63.0
       },
-      "computed_at": 1788905935
+      "computed_at": 1788906220
     },
     "FET": {
       "ticker": "FET",
@@ -337,7 +337,7 @@
         "limiting_factor": "riesgo",
         "risk_usd_per_unit": 63.0
       },
-      "computed_at": 1788905936
+      "computed_at": 1788906221
     },
     "LINK": {
       "ticker": "LINK",
@@ -363,7 +363,7 @@
         "limiting_factor": "riesgo",
         "risk_usd_per_unit": 63.0
       },
-      "computed_at": 1788905936
+      "computed_at": 1788906221
     },
     "RNDR": {
       "ticker": "RNDR",
@@ -389,7 +389,7 @@
         "limiting_factor": "riesgo",
         "risk_usd_per_unit": 63.0
       },
-      "computed_at": 1788905936
+      "computed_at": 1788906222
     },
     "TAO": {
       "ticker": "TAO",
@@ -415,7 +415,7 @@
         "limiting_factor": "riesgo",
         "risk_usd_per_unit": 63.0
       },
-      "computed_at": 1788905937
+      "computed_at": 1788906222
     },
     "GRT": {
       "ticker": "GRT",
@@ -441,7 +441,7 @@
         "limiting_factor": "riesgo",
         "risk_usd_per_unit": 63.0
       },
-      "computed_at": 1788905937
+      "computed_at": 1788906222
     },
     "IO": {
       "ticker": "IO",
@@ -467,7 +467,7 @@
         "limiting_factor": "riesgo",
         "risk_usd_per_unit": 63.0
       },
-      "computed_at": 1788905938
+      "computed_at": 1788906223
     },
     "FF": {
       "ticker": "FF",
@@ -493,7 +493,7 @@
         "limiting_factor": "riesgo",
         "risk_usd_per_unit": 63.0
       },
-      "computed_at": 1788905938
+      "computed_at": 1788906223
     },
     "ATOM": {
       "ticker": "ATOM",
@@ -519,7 +519,7 @@
         "limiting_factor": "riesgo",
         "risk_usd_per_unit": 63.0
       },
-      "computed_at": 1788905938
+      "computed_at": 1788906224
     },
     "VET": {
       "ticker": "VET",
@@ -545,7 +545,7 @@
         "limiting_factor": "riesgo",
         "risk_usd_per_unit": 63.0
       },
-      "computed_at": 1788905939
+      "computed_at": 1788906224
     },
     "ETC": {
       "ticker": "ETC",
@@ -571,7 +571,233 @@
         "limiting_factor": "riesgo",
         "risk_usd_per_unit": 63.0
       },
-      "computed_at": 1788905939
+      "computed_at": 1788906224
+    },
+    "COHR": {
+      "ticker": "COHR",
+      "symbol": "COHRBUSDT",
+      "ok": true,
+      "n_atr": 15.15,
+      "stop_distance": 30.3,
+      "ref_price": 287.42,
+      "ticker_capital_dinamico": 4200.0,
+      "system1": {
+        "available": true,
+        "entry": 314.16,
+        "exit": 255.09,
+        "unit_shares": 2.07920792,
+        "limiting_factor": "riesgo",
+        "risk_usd_per_unit": 63.0
+      },
+      "system2": {
+        "available": false,
+        "reason": "Faltan velas"
+      },
+      "computed_at": 1788906225
+    },
+    "MRVL": {
+      "ticker": "MRVL",
+      "symbol": "MRVLBUSDT",
+      "ok": true,
+      "n_atr": 13.711,
+      "stop_distance": 27.422,
+      "ref_price": 223.79,
+      "ticker_capital_dinamico": 4200.0,
+      "system1": {
+        "available": true,
+        "entry": 260.44,
+        "exit": 200.65,
+        "unit_shares": 2.29742542,
+        "limiting_factor": "riesgo",
+        "risk_usd_per_unit": 63.0
+      },
+      "system2": {
+        "available": true,
+        "entry": 260.44,
+        "exit": 200.65,
+        "unit_shares": 2.29742542,
+        "limiting_factor": "riesgo",
+        "risk_usd_per_unit": 63.0
+      },
+      "computed_at": 1788906225
+    },
+    "AXTI": {
+      "ticker": "AXTI",
+      "symbol": "AXTIBUSDT",
+      "ok": true,
+      "n_atr": 5.8255,
+      "stop_distance": 11.651,
+      "ref_price": 64.5,
+      "ticker_capital_dinamico": 4200.0,
+      "system1": {
+        "available": true,
+        "entry": 88.56,
+        "exit": 52.84,
+        "unit_shares": 5.40726118,
+        "limiting_factor": "riesgo",
+        "risk_usd_per_unit": 63.0
+      },
+      "system2": {
+        "available": false,
+        "reason": "Faltan velas"
+      },
+      "computed_at": 1788906226
+    },
+    "LITE": {
+      "ticker": "LITE",
+      "symbol": "LITEBUSDT",
+      "ok": true,
+      "n_atr": 48.4115,
+      "stop_distance": 96.823,
+      "ref_price": 894.9,
+      "ticker_capital_dinamico": 4200.0,
+      "system1": {
+        "available": true,
+        "entry": 977.53,
+        "exit": 819.79,
+        "unit_shares": 0.65067184,
+        "limiting_factor": "riesgo",
+        "risk_usd_per_unit": 63.0
+      },
+      "system2": {
+        "available": true,
+        "entry": 999.98,
+        "exit": 784.57,
+        "unit_shares": 0.65067184,
+        "limiting_factor": "riesgo",
+        "risk_usd_per_unit": 63.0
+      },
+      "computed_at": 1788906226
+    },
+    "PLTR": {
+      "ticker": "PLTR",
+      "symbol": "PLTRBUSDT",
+      "ok": true,
+      "n_atr": 6.5305,
+      "stop_distance": 13.061,
+      "ref_price": 176.17,
+      "ticker_capital_dinamico": 4200.0,
+      "system1": {
+        "available": true,
+        "entry": 188.35,
+        "exit": 166.0,
+        "unit_shares": 4.8235204,
+        "limiting_factor": "riesgo",
+        "risk_usd_per_unit": 63.0
+      },
+      "system2": {
+        "available": true,
+        "entry": 188.35,
+        "exit": 166.0,
+        "unit_shares": 4.8235204,
+        "limiting_factor": "riesgo",
+        "risk_usd_per_unit": 63.0
+      },
+      "computed_at": 1788906227
+    },
+    "AAOI": {
+      "ticker": "AAOI",
+      "symbol": "AAOIBUSDT",
+      "ok": true,
+      "n_atr": 7.866,
+      "stop_distance": 15.732,
+      "ref_price": 108.28,
+      "ticker_capital_dinamico": 4200.0,
+      "system1": {
+        "available": true,
+        "entry": 141.0,
+        "exit": 97.08,
+        "unit_shares": 4.00457666,
+        "limiting_factor": "riesgo",
+        "risk_usd_per_unit": 63.0
+      },
+      "system2": {
+        "available": true,
+        "entry": 161.03,
+        "exit": 97.08,
+        "unit_shares": 4.00457666,
+        "limiting_factor": "riesgo",
+        "risk_usd_per_unit": 63.0
+      },
+      "computed_at": 1788906227
+    },
+    "NVDA": {
+      "ticker": "NVDA",
+      "symbol": "NVDABUSDT",
+      "ok": true,
+      "n_atr": 6.0135,
+      "stop_distance": 12.027,
+      "ref_price": 231.59,
+      "ticker_capital_dinamico": 4200.0,
+      "system1": {
+        "available": true,
+        "entry": 234.77,
+        "exit": 215.32,
+        "unit_shares": 5.23821402,
+        "limiting_factor": "riesgo",
+        "risk_usd_per_unit": 63.0
+      },
+      "system2": {
+        "available": true,
+        "entry": 234.77,
+        "exit": 204.13,
+        "unit_shares": 5.23821402,
+        "limiting_factor": "riesgo",
+        "risk_usd_per_unit": 63.0
+      },
+      "computed_at": 1788906227
+    },
+    "FN": {
+      "ticker": "FN",
+      "symbol": "FNBUSDT",
+      "ok": true,
+      "n_atr": 30.350003051758,
+      "stop_distance": 60.700006103516,
+      "ref_price": 407.399994,
+      "ticker_capital_dinamico": 4200.0,
+      "system1": {
+        "available": true,
+        "entry": 603.090027,
+        "exit": 380.390015,
+        "unit_shares": 1.03789116,
+        "limiting_factor": "riesgo",
+        "risk_usd_per_unit": 63.0
+      },
+      "system2": {
+        "available": true,
+        "entry": 625.140015,
+        "exit": 380.390015,
+        "unit_shares": 1.03789116,
+        "limiting_factor": "riesgo",
+        "risk_usd_per_unit": 63.0
+      },
+      "computed_at": 1788906228
+    },
+    "SPCX": {
+      "ticker": "SPCX",
+      "symbol": "SPCXBUSDT",
+      "ok": true,
+      "n_atr": 4.4065,
+      "stop_distance": 8.813,
+      "ref_price": 149.95,
+      "ticker_capital_dinamico": 4200.0,
+      "system1": {
+        "available": true,
+        "entry": 152.2,
+        "exit": 138.4,
+        "unit_shares": 7.14853058,
+        "limiting_factor": "riesgo",
+        "risk_usd_per_unit": 63.0
+      },
+      "system2": {
+        "available": true,
+        "entry": 152.2,
+        "exit": 130.5,
+        "unit_shares": 7.14853058,
+        "limiting_factor": "riesgo",
+        "risk_usd_per_unit": 63.0
+      },
+      "computed_at": 1788906229
     }
   },
   "familias": [
@@ -591,7 +817,8 @@
       "NEAR"
     ],
     [
-      "LTC"
+      "LTC",
+      "ETC"
     ],
     [
       "ZEC"
@@ -607,8 +834,7 @@
     ],
     [
       "FET",
-      "GRT",
-      "ETC"
+      "GRT"
     ],
     [
       "LINK"
@@ -630,6 +856,27 @@
     ],
     [
       "VET"
+    ],
+    [
+      "COHR",
+      "AXTI",
+      "LITE"
+    ],
+    [
+      "MRVL",
+      "AAOI"
+    ],
+    [
+      "PLTR"
+    ],
+    [
+      "NVDA"
+    ],
+    [
+      "FN"
+    ],
+    [
+      "SPCX"
     ]
   ]
 }

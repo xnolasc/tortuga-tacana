@@ -17,6 +17,7 @@ from crypto_common import (
     get_dynamic_capital,
 )
 from crypto_price_feed import get_precise_price
+import yfinance as yf
 import pool_ledger as rl
 
 SYSTEMS = ["system1", "system2"]
@@ -146,6 +147,14 @@ def main():
 
         symbol = symbol_for(ticker)
         price_info = get_precise_price(symbol)
+        if not price_info["ok"]:
+            try:
+                stock = yf.Ticker(ticker)
+                hist = stock.history(period="1d")
+                if len(hist) > 0:
+                    price_info = {"last_price": float(hist["Close"].iloc[-1]), "ok": True}
+            except Exception:
+                pass
         if not price_info["ok"]:
             continue
         price = price_info["last_price"]

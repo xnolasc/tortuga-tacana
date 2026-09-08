@@ -19,9 +19,15 @@ TICKERS = ["BNB", "UNI", "BTC", "ETH", "SOL", "NEAR",
            "XRP", "LTC", "ZEC", "DASH",
            "INJ", "DOT", "FET", "LINK",
            "RNDR", "TAO", "GRT",
-           "IO", "FF", "ATOM", "VET", "ETC"]
+           "IO", "FF", "ATOM", "VET", "ETC",
+           "COHR", "MRVL", "AXTI", "LITE", "PLTR", "AAOI", "NVDA", "FN", "SPCX"]
+
+# Las 9 acciones reales usan la convencion BUSDT (bStock), no USDT normal
+SIMBOLOS_ACCIONES = {"COHR", "MRVL", "AXTI", "LITE", "PLTR", "AAOI", "NVDA", "FN", "SPCX"}
 
 def symbol_for(ticker: str) -> str:
+    if ticker in SIMBOLOS_ACCIONES:
+        return f"{ticker}BUSDT"
     return f"{ticker}USDT"
 
 TICKER_CAPITAL_USD = {
