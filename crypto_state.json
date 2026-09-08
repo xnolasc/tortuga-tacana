@@ -250,9 +250,14 @@
           "entry_price": 1.086,
           "shares": 25.2312868,
           "entry_time": 1788839113
+        },
+        {
+          "entry_price": 1.224,
+          "shares": 483.87096774,
+          "entry_time": 1788888204
         }
       ],
-      "stop": 0.9671
+      "stop": 1.0938
     },
     "system2": {
       "status": "EN_POSICION",
@@ -266,9 +271,14 @@
           "entry_price": 1.086,
           "shares": 25.2312868,
           "entry_time": 1788839113
+        },
+        {
+          "entry_price": 1.224,
+          "shares": 483.87096774,
+          "entry_time": 1788888204
         }
       ],
-      "stop": 0.9671
+      "stop": 1.0938
     }
   },
   "FET": {

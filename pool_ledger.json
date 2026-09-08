@@ -1,0 +1,47 @@
+{
+  "posiciones_reservadas": {
+    "DOT_system1": {
+      "shares": 483.87096774,
+      "monto_bruto": 592.26,
+      "comision_entrada": 0.59,
+      "costo_total": 592.85,
+      "unidades": 1,
+      "reservado_at": 1788888204
+    },
+    "DOT_system2": {
+      "shares": 483.87096774,
+      "monto_bruto": 592.26,
+      "comision_entrada": 0.59,
+      "costo_total": 592.85,
+      "unidades": 1,
+      "reservado_at": 1788888204
+    }
+  },
+  "historial_eventos": [
+    {
+      "evento": "reserva",
+      "ticker": "DOT",
+      "system": "system1",
+      "shares": 483.87096774,
+      "monto_bruto": 592.26,
+      "comision": 0.59,
+      "capital_disponible_despues": 3607.15,
+      "timestamp": 1788888204
+    },
+    {
+      "evento": "reserva",
+      "ticker": "DOT",
+      "system": "system2",
+      "shares": 483.87096774,
+      "monto_bruto": 592.26,
+      "comision": 0.59,
+      "capital_disponible_despues": 3014.3,
+      "timestamp": 1788888204
+    }
+  ],
+  "comisiones_pagadas_total": 1.18,
+  "capital_total_real_o_simulado": 4200.0,
+  "es_balance_real": false,
+  "capital_disponible": 3014.3,
+  "updated_at": 1788888204
+}

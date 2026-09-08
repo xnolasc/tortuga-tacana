@@ -150,8 +150,7 @@ def main():
             continue
         price = price_info["last_price"]
 
-        ledger_path = ledger_path_for(ticker)
-        ledger = rl.load_ledger(ledger_path, TICKER_CAPITAL_USD.get(ticker, 200.0))
+        ledger = rl.load_pool()
 
         if ticker not in state:
             state[ticker] = {}
