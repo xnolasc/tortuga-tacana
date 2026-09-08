@@ -53,7 +53,7 @@ def compute_unit_sizing(stop_distance, ref_price, ticker_capital):
     return round(unit_shares, 8), limiting_factor, round(risk_usd, 2)
 
 
-def compute_levels_for_ticker(ticker, candles_cache):
+def compute_levels_for_ticker(ticker, candles_cache, capital_total):
     symbol = symbol_for(ticker)
     try:
         candles = fetch_daily_klines(symbol)
