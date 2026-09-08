@@ -19,7 +19,7 @@ TICKERS = ["BNB", "UNI", "BTC", "ETH", "SOL", "SUI", "NEAR",
            "TRX", "XRP", "LTC", "ZEC", "DASH",
            "INJ", "DOGE", "DOT", "FET", "LINK",
            "RNDR", "TAO", "GRT",
-           "IO"]
+           "IO", "FF", "ATOM"]
 
 def symbol_for(ticker: str) -> str:
     return f"{ticker}USDT"

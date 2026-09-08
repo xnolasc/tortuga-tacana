@@ -344,5 +344,53 @@
     "system2": {
       "status": "ESPERANDO"
     }
+  },
+  "FF": {
+    "system1": {
+      "status": "EN_POSICION",
+      "units": [
+        {
+          "entry_price": 0.14682,
+          "shares": 2509.06049624,
+          "entry_time": 1788898769
+        }
+      ],
+      "stop": 0.121711
+    },
+    "system2": {
+      "status": "EN_POSICION",
+      "units": [
+        {
+          "entry_price": 0.14682,
+          "shares": 2509.06049624,
+          "entry_time": 1788898769
+        }
+      ],
+      "stop": 0.121711
+    }
+  },
+  "ATOM": {
+    "system1": {
+      "status": "EN_POSICION",
+      "units": [
+        {
+          "entry_price": 1.807,
+          "shares": 370.58823529,
+          "entry_time": 1788898770
+        }
+      ],
+      "stop": 1.637
+    },
+    "system2": {
+      "status": "EN_POSICION",
+      "units": [
+        {
+          "entry_price": 1.807,
+          "shares": 370.58823529,
+          "entry_time": 1788898770
+        }
+      ],
+      "stop": 1.637
+    }
   }
 }

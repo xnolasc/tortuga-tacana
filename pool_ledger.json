@@ -15,6 +15,38 @@
       "costo_total": 592.85,
       "unidades": 1,
       "reservado_at": 1788888204
+    },
+    "FF_system1": {
+      "shares": 2509.06049624,
+      "monto_bruto": 368.38,
+      "comision_entrada": 0.37,
+      "costo_total": 368.75,
+      "unidades": 1,
+      "reservado_at": 1788898769
+    },
+    "FF_system2": {
+      "shares": 2509.06049624,
+      "monto_bruto": 368.38,
+      "comision_entrada": 0.37,
+      "costo_total": 368.75,
+      "unidades": 1,
+      "reservado_at": 1788898769
+    },
+    "ATOM_system1": {
+      "shares": 370.58823529,
+      "monto_bruto": 669.65,
+      "comision_entrada": 0.67,
+      "costo_total": 670.3199999999999,
+      "unidades": 1,
+      "reservado_at": 1788898770
+    },
+    "ATOM_system2": {
+      "shares": 370.58823529,
+      "monto_bruto": 669.65,
+      "comision_entrada": 0.67,
+      "costo_total": 670.3199999999999,
+      "unidades": 1,
+      "reservado_at": 1788898770
     }
   },
   "historial_eventos": [
@@ -37,11 +69,51 @@
       "comision": 0.59,
       "capital_disponible_despues": 3014.3,
       "timestamp": 1788888204
+    },
+    {
+      "evento": "reserva",
+      "ticker": "FF",
+      "system": "system1",
+      "shares": 2509.06049624,
+      "monto_bruto": 368.38,
+      "comision": 0.37,
+      "capital_disponible_despues": 2645.55,
+      "timestamp": 1788898769
+    },
+    {
+      "evento": "reserva",
+      "ticker": "FF",
+      "system": "system2",
+      "shares": 2509.06049624,
+      "monto_bruto": 368.38,
+      "comision": 0.37,
+      "capital_disponible_despues": 2276.8,
+      "timestamp": 1788898769
+    },
+    {
+      "evento": "reserva",
+      "ticker": "ATOM",
+      "system": "system1",
+      "shares": 370.58823529,
+      "monto_bruto": 669.65,
+      "comision": 0.67,
+      "capital_disponible_despues": 1606.48,
+      "timestamp": 1788898770
+    },
+    {
+      "evento": "reserva",
+      "ticker": "ATOM",
+      "system": "system2",
+      "shares": 370.58823529,
+      "monto_bruto": 669.65,
+      "comision": 0.67,
+      "capital_disponible_despues": 936.16,
+      "timestamp": 1788898770
     }
   ],
-  "comisiones_pagadas_total": 1.18,
+  "comisiones_pagadas_total": 3.26,
   "capital_total_real_o_simulado": 4200.0,
   "es_balance_real": false,
-  "capital_disponible": 3014.3,
-  "updated_at": 1788888204
+  "capital_disponible": 936.16,
+  "updated_at": 1788898770
 }
