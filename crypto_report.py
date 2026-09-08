@@ -109,7 +109,16 @@ def compute_levels_for_ticker(ticker, candles_cache, capital_total):
         system2 = {"available": True, "entry": round(s2_entry, 6), "exit": round(s2_exit, 6),
                    "unit_shares": shares, "limiting_factor": limit, "risk_usd_per_unit": risk_usd}
     else:
-        system2 = {"available": False, "reason": "Faltan velas"}
+        yahoo_candles = fetch_yahoo_klines(ticker, SYSTEM2_ENTRY_BREAKOUT_DAYS)
+        if len(yahoo_candles) >= SYSTEM2_ENTRY_BREAKOUT_DAYS:
+            yahoo_closed = yahoo_candles[:-1]
+            s2_entry = max(c["high"] for c in yahoo_closed[-SYSTEM2_ENTRY_BREAKOUT_DAYS:])
+            s2_exit = min(c["low"] for c in yahoo_closed[-SYSTEM2_EXIT_BREAKOUT_DAYS:])
+            shares, limit, risk_usd = compute_unit_sizing(stop_distance, ref_price, ticker_capital)
+            system2 = {"available": True, "entry": round(s2_entry, 6), "exit": round(s2_exit, 6),
+                       "unit_shares": shares, "limiting_factor": limit, "risk_usd_per_unit": risk_usd}
+        else:
+            system2 = {"available": False, "reason": "Faltan velas"}
 
     return {
         "ticker": ticker, "symbol": symbol, "ok": True,

@@ -2,6 +2,7 @@
 
 import json
 import requests
+import yfinance as yf
 from crypto_common import BINANCE_BASE, TICKER_PRICE_ENDPOINT, BOOK_TICKER_ENDPOINT
 
 TIMEOUT = 8
@@ -11,6 +12,21 @@ MAX_RETRIES = 2
 def _empty_result(symbol):
     return {"symbol": symbol, "last_price": None, "bid": None, "ask": None,
             "mid": None, "spread_pct": None, "ok": False, "error": None}
+
+
+def _try_yahoo_fallback(symbol):
+    ticker_original = symbol.replace("BUSDT", "").replace("USDT", "")
+    try:
+        stock = yf.Ticker(ticker_original)
+        hist = stock.history(period="1d")
+        if len(hist) > 0:
+            precio = float(hist["Close"].iloc[-1])
+            result = _empty_result(symbol)
+            result.update({"last_price": precio, "mid": precio, "ok": True})
+            return result
+    except Exception:
+        pass
+    return None
 
 
 def get_precise_price(symbol: str) -> dict:
@@ -34,6 +50,9 @@ def get_precise_price(symbol: str) -> dict:
             return result
         except Exception as e:
             last_error = str(e)
+    yahoo_result = _try_yahoo_fallback(symbol)
+    if yahoo_result:
+        return yahoo_result
     result["error"] = last_error
     return result
 
@@ -69,3 +88,11 @@ def get_precise_prices(symbols: list) -> dict:
         with ThreadPoolExecutor(max_workers=min(len(symbols), 10)) as ex:
             individual = list(ex.map(get_precise_price, symbols))
         return {r["symbol"]: r for r in individual}
+    finally:
+        # Asegurar que cualquier simbolo que quedo sin 'ok=True' (ej. FN
+        # que Binance no tiene) tambien intente el fallback de Yahoo
+        for s in symbols:
+            if not results.get(s, {}).get("ok"):
+                yahoo_result = _try_yahoo_fallback(s)
+                if yahoo_result:
+                    results[s] = yahoo_result
