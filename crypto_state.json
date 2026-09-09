@@ -1,60 +1,18 @@
 {
   "BNB": {
     "system1": {
-      "status": "EN_POSICION",
-      "units": [
-        {
-          "entry_price": 771.55,
-          "shares": 0.05390719,
-          "entry_time": 1788641006
-        }
-      ],
-      "stop": 725.174
+      "status": "ESPERANDO"
     },
     "system2": {
-      "status": "EN_POSICION",
-      "units": [
-        {
-          "entry_price": 771.55,
-          "shares": 0.05390719,
-          "entry_time": 1788641006
-        }
-      ],
-      "stop": 725.174
+      "status": "ESPERANDO"
     }
   },
   "UNI": {
     "system1": {
-      "status": "EN_POSICION",
-      "units": [
-        {
-          "entry_price": 7.107,
-          "shares": 3.34896182,
-          "entry_time": 1788641061
-        },
-        {
-          "entry_price": 7.348,
-          "shares": 3.34896182,
-          "entry_time": 1788657003
-        }
-      ],
-      "stop": 6.4522
+      "status": "ESPERANDO"
     },
     "system2": {
-      "status": "EN_POSICION",
-      "units": [
-        {
-          "entry_price": 7.107,
-          "shares": 3.34896182,
-          "entry_time": 1788641061
-        },
-        {
-          "entry_price": 7.348,
-          "shares": 3.34896182,
-          "entry_time": 1788657003
-        }
-      ],
-      "stop": 6.4522
+      "status": "ESPERANDO"
     }
   },
   "ARB": {
@@ -99,36 +57,10 @@
   },
   "NEAR": {
     "system1": {
-      "status": "EN_POSICION",
-      "units": [
-        {
-          "entry_price": 2.388,
-          "shares": 9.31387768,
-          "entry_time": 1788706857
-        },
-        {
-          "entry_price": 2.485,
-          "shares": 9.31387768,
-          "entry_time": 1788732008
-        }
-      ],
-      "stop": 2.1629
+      "status": "ESPERANDO"
     },
     "system2": {
-      "status": "EN_POSICION",
-      "units": [
-        {
-          "entry_price": 2.388,
-          "shares": 9.31387768,
-          "entry_time": 1788706857
-        },
-        {
-          "entry_price": 2.485,
-          "shares": 9.31387768,
-          "entry_time": 1788732008
-        }
-      ],
-      "stop": 2.1629
+      "status": "ESPERANDO"
     }
   },
   "TRX": {
@@ -149,26 +81,10 @@
   },
   "LTC": {
     "system1": {
-      "status": "EN_POSICION",
-      "units": [
-        {
-          "entry_price": 56.83,
-          "shares": 0.59370671,
-          "entry_time": 1788791579
-        }
-      ],
-      "stop": 51.777
+      "status": "ESPERANDO"
     },
     "system2": {
-      "status": "EN_POSICION",
-      "units": [
-        {
-          "entry_price": 56.83,
-          "shares": 0.59370671,
-          "entry_time": 1788791579
-        }
-      ],
-      "stop": 51.777
+      "status": "ESPERANDO"
     }
   },
   "ZEC": {
@@ -189,36 +105,10 @@
   },
   "INJ": {
     "system1": {
-      "status": "EN_POSICION",
-      "units": [
-        {
-          "entry_price": 6.314,
-          "shares": 3.5465185,
-          "entry_time": 1788812741
-        },
-        {
-          "entry_price": 6.535,
-          "shares": 3.5465185,
-          "entry_time": 1788832812
-        }
-      ],
-      "stop": 5.6891
+      "status": "ESPERANDO"
     },
     "system2": {
-      "status": "EN_POSICION",
-      "units": [
-        {
-          "entry_price": 6.314,
-          "shares": 3.5465185,
-          "entry_time": 1788812741
-        },
-        {
-          "entry_price": 6.535,
-          "shares": 3.5465185,
-          "entry_time": 1788832812
-        }
-      ],
-      "stop": 5.6891
+      "status": "ESPERANDO"
     }
   },
   "DOGE": {
@@ -283,26 +173,10 @@
   },
   "FET": {
     "system1": {
-      "status": "EN_POSICION",
-      "units": [
-        {
-          "entry_price": 0.1846,
-          "shares": 103.30578512,
-          "entry_time": 1788813736
-        }
-      ],
-      "stop": 0.15556
+      "status": "ESPERANDO"
     },
     "system2": {
-      "status": "EN_POSICION",
-      "units": [
-        {
-          "entry_price": 0.1846,
-          "shares": 103.30578512,
-          "entry_time": 1788813736
-        }
-      ],
-      "stop": 0.15556
+      "status": "ESPERANDO"
     }
   },
   "LINK": {
@@ -451,7 +325,7 @@
   },
   "LITE": {
     "system1": {
-      "status": "ESPERANDO"
+      "status": "SIN_CAPITAL"
     },
     "system2": {
       "status": "ESPERANDO"
@@ -491,10 +365,10 @@
   },
   "SPCX": {
     "system1": {
-      "status": "ESPERANDO"
+      "status": "SIN_CAPITAL"
     },
     "system2": {
-      "status": "ESPERANDO"
+      "status": "SIN_CAPITAL"
     }
   }
 }
