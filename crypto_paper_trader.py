@@ -174,7 +174,7 @@ def main():
                 continue
             pos = state[ticker].get(system, empty_position())
 
-            if pos["status"] == "ESPERANDO":
+            if pos["status"] in ("ESPERANDO", "SIN_CAPITAL", "FAMILIA_LLENA", "HEAT_LIMITE"):
                 if system == "system1":
                     last_result = get_last_trade_result(trades, ticker, system)
                     if SKIP_AFTER_WINNER and last_result == "GANANCIA":
@@ -188,11 +188,13 @@ def main():
                     unidades_familia = count_units_in_family(state, family_map, ticker)
                     if unidades_familia >= MAX_UNITS_PER_FAMILY:
                         log(ticker + "/" + system + ": FAMILIA LLENA, se salta.")
+                        state[ticker][system] = {"status": "FAMILIA_LLENA"}
                         continue
 
                     riesgo_nueva = unit_shares_deseado * stop_distance
                     if heat_actual + riesgo_nueva > heat_limite:
                         log(ticker + "/" + system + ": PORTFOLIO HEAT se pasaria, se salta.")
+                        state[ticker][system] = {"status": "HEAT_LIMITE"}
                         continue
 
                     shares_ok, monto_ok, comision_ok, motivo = rl.try_reserve(
@@ -200,6 +202,7 @@ def main():
                         MIN_NOTIONAL_USD, COMMISSION_PCT)
 
                     if motivo == "sin_capital":
+                        state[ticker][system] = {"status": "SIN_CAPITAL"}
                         continue
 
                     rl.confirm_reserve(ledger, ticker, system, shares_ok, monto_ok, comision_ok)
