@@ -126,7 +126,7 @@ def render_html():
     fuente_color = "green" if pool_summary.get("es_balance_real") else "red"
     ledger_cards = [f"""
     <div class="card" style="min-width:100%;">
-      <div class="label">Pool unico compartido (21 tickers, diseño Dennis)</div>
+      <div class="label">Pool unico compartido (35 tickers, diseño Dennis)</div>
       <div class="value">${fmt(pool_summary.get('capital_disponible'), 2)}</div>
       <div class="dim">de ${fmt(pool_summary.get('capital_total'), 0)} total (<span class="{fuente_color}">{fuente_txt}</span>) · reservado: ${fmt(pool_summary.get('capital_reservado_en_posiciones'), 2)} · comisiones pagadas: ${fmt(pool_summary.get('comisiones_pagadas_total'), 2)} · posiciones abiertas: {pool_summary.get('cantidad_posiciones_abiertas', 0)}</div>
     </div>"""]
