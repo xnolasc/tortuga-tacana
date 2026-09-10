@@ -80,7 +80,7 @@ def ledger_path_for(ticker: str) -> str:
     return os.path.join(BASE_DIR, f"real_ledger_{ticker}.json")
 
 DASHBOARD_PORT = 8895
-DASHBOARD_TITLE = "Tortuga Tacana Pool Dennis - 31 tickers (22 cripto + 9 bStocks tokenizados), 1 pool unico"
+DASHBOARD_TITLE = "Tortuga Tacana Pool Dennis - 35 tickers (26 cripto + 9 bStocks tokenizados), 1 pool unico"
 
 
 def get_dynamic_capital(ticker: str) -> float:
