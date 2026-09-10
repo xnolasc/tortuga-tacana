@@ -20,6 +20,7 @@ TICKERS = ["BNB", "UNI", "BTC", "ETH", "SOL", "NEAR",
            "INJ", "DOT", "FET", "LINK",
            "RNDR", "TAO", "GRT",
            "IO", "FF", "ATOM", "VET", "ETC",
+           "AVAX", "POL", "TRX", "ADA",
            "COHR", "MRVL", "AXTI", "LITE", "PLTR", "AAOI", "NVDA", "FN", "SPCX"]
 
 # Las 9 acciones reales usan la convencion BUSDT (bStock), no USDT normal

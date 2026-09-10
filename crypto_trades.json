@@ -180,5 +180,31 @@
     "reason": "cierre_legacy_branch_anterior",
     "entry_time": 1788813736,
     "exit_time": 1788917207
+  },
+  {
+    "ticker": "DOT",
+    "system": "system1",
+    "entry_price": 1.209409,
+    "exit_price": 1.093,
+    "shares": 534.33354134,
+    "units": 3,
+    "pnl_usd": -64.51,
+    "result": "PERDIDA",
+    "reason": "stop_loss",
+    "entry_time": 1788812744,
+    "exit_time": 1788991751
+  },
+  {
+    "ticker": "DOT",
+    "system": "system2",
+    "entry_price": 1.209409,
+    "exit_price": 1.093,
+    "shares": 534.33354134,
+    "units": 3,
+    "pnl_usd": -64.51,
+    "result": "PERDIDA",
+    "reason": "stop_loss",
+    "entry_time": 1788812744,
+    "exit_time": 1788991751
   }
 ]

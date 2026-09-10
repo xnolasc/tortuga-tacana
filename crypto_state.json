@@ -57,10 +57,10 @@
   },
   "NEAR": {
     "system1": {
-      "status": "ESPERANDO"
+      "status": "SIN_CAPITAL"
     },
     "system2": {
-      "status": "ESPERANDO"
+      "status": "SIN_CAPITAL"
     }
   },
   "TRX": {
@@ -89,10 +89,10 @@
   },
   "ZEC": {
     "system1": {
-      "status": "ESPERANDO"
+      "status": "SIN_CAPITAL"
     },
     "system2": {
-      "status": "ESPERANDO"
+      "status": "SIN_CAPITAL"
     }
   },
   "DASH": {
@@ -108,7 +108,7 @@
       "status": "ESPERANDO"
     },
     "system2": {
-      "status": "ESPERANDO"
+      "status": "SIN_CAPITAL"
     }
   },
   "DOGE": {
@@ -129,46 +129,10 @@
   },
   "DOT": {
     "system1": {
-      "status": "EN_POSICION",
-      "units": [
-        {
-          "entry_price": 1.053,
-          "shares": 25.2312868,
-          "entry_time": 1788812744
-        },
-        {
-          "entry_price": 1.086,
-          "shares": 25.2312868,
-          "entry_time": 1788839113
-        },
-        {
-          "entry_price": 1.224,
-          "shares": 483.87096774,
-          "entry_time": 1788888204
-        }
-      ],
-      "stop": 1.0938
+      "status": "ESPERANDO"
     },
     "system2": {
-      "status": "EN_POSICION",
-      "units": [
-        {
-          "entry_price": 1.053,
-          "shares": 25.2312868,
-          "entry_time": 1788812744
-        },
-        {
-          "entry_price": 1.086,
-          "shares": 25.2312868,
-          "entry_time": 1788839113
-        },
-        {
-          "entry_price": 1.224,
-          "shares": 483.87096774,
-          "entry_time": 1788888204
-        }
-      ],
-      "stop": 1.0938
+      "status": "ESPERANDO"
     }
   },
   "FET": {
@@ -251,9 +215,14 @@
           "entry_price": 1.807,
           "shares": 370.58823529,
           "entry_time": 1788898770
+        },
+        {
+          "entry_price": 1.854,
+          "shares": 344.07427635,
+          "entry_time": 1788995179
         }
       ],
-      "stop": 1.637
+      "stop": 1.6709
     },
     "system2": {
       "status": "EN_POSICION",
@@ -262,9 +231,14 @@
           "entry_price": 1.807,
           "shares": 370.58823529,
           "entry_time": 1788898770
+        },
+        {
+          "entry_price": 1.854,
+          "shares": 294.82383851,
+          "entry_time": 1788995179
         }
       ],
-      "stop": 1.637
+      "stop": 1.6709
     }
   },
   "VET": {
@@ -328,7 +302,7 @@
       "status": "SIN_CAPITAL"
     },
     "system2": {
-      "status": "ESPERANDO"
+      "status": "SIN_CAPITAL"
     }
   },
   "PLTR": {

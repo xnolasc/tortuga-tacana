@@ -1,21 +1,5 @@
 {
   "posiciones_reservadas": {
-    "DOT_system1": {
-      "shares": 483.87096774,
-      "monto_bruto": 592.26,
-      "comision_entrada": 0.59,
-      "costo_total": 592.85,
-      "unidades": 1,
-      "reservado_at": 1788888204
-    },
-    "DOT_system2": {
-      "shares": 483.87096774,
-      "monto_bruto": 592.26,
-      "comision_entrada": 0.59,
-      "costo_total": 592.85,
-      "unidades": 1,
-      "reservado_at": 1788888204
-    },
     "FF_system1": {
       "shares": 2509.06049624,
       "monto_bruto": 368.38,
@@ -33,19 +17,19 @@
       "reservado_at": 1788898769
     },
     "ATOM_system1": {
-      "shares": 370.58823529,
-      "monto_bruto": 669.65,
-      "comision_entrada": 0.67,
-      "costo_total": 670.3199999999999,
-      "unidades": 1,
+      "shares": 714.66251164,
+      "monto_bruto": 1307.56,
+      "comision_entrada": 1.31,
+      "costo_total": 1308.87,
+      "unidades": 2,
       "reservado_at": 1788898770
     },
     "ATOM_system2": {
-      "shares": 370.58823529,
-      "monto_bruto": 669.65,
-      "comision_entrada": 0.67,
-      "costo_total": 670.3199999999999,
-      "unidades": 1,
+      "shares": 665.4120738,
+      "monto_bruto": 1216.25,
+      "comision_entrada": 1.22,
+      "costo_total": 1217.47,
+      "unidades": 2,
       "reservado_at": 1788898770
     },
     "VET_system1": {
@@ -145,11 +129,53 @@
       "comision": 0.46,
       "capital_disponible_despues": 0.0,
       "timestamp": 1788899147
+    },
+    {
+      "evento": "liberacion",
+      "ticker": "DOT",
+      "system": "system1",
+      "monto_bruto_venta": 528.87,
+      "comision_salida": 0.53,
+      "costo_total_original": 592.85,
+      "pnl_neto": -64.51,
+      "capital_disponible_despues": 528.34,
+      "timestamp": 1788991751
+    },
+    {
+      "evento": "liberacion",
+      "ticker": "DOT",
+      "system": "system2",
+      "monto_bruto_venta": 528.87,
+      "comision_salida": 0.53,
+      "costo_total_original": 592.85,
+      "pnl_neto": -64.51,
+      "capital_disponible_despues": 1056.68,
+      "timestamp": 1788991751
+    },
+    {
+      "evento": "reserva",
+      "ticker": "ATOM",
+      "system": "system1",
+      "shares": 344.07427635,
+      "monto_bruto": 637.91,
+      "comision": 0.64,
+      "capital_disponible_despues": 547.15,
+      "timestamp": 1788995179
+    },
+    {
+      "evento": "reserva",
+      "ticker": "ATOM",
+      "system": "system2",
+      "shares": 294.82383851,
+      "monto_bruto": 546.6,
+      "comision": 0.55,
+      "capital_disponible_despues": 0.0,
+      "timestamp": 1788995179
     }
   ],
-  "comisiones_pagadas_total": 4.19,
+  "comisiones_pagadas_total": 6.44,
   "capital_total_real_o_simulado": 4200.0,
   "es_balance_real": false,
   "capital_disponible": 0.0,
-  "updated_at": 1788899147
+  "updated_at": 1788995179
 }
