@@ -52,6 +52,67 @@ evalúan ajustes de diseño (tamaño de capital vs. cantidad de mercados,
 posible sistema alternativo de Dual Moving Average para comparar
 resultados con capital limitado).
 
+### 🔧 Instalación
+
+**Requisitos previos:**
+- Python 3.9 o superior
+- macOS, Linux o Windows (probado en macOS 12 Monterey)
+- Una cuenta de Binance (no hace falta API Key para correr en modo
+  simulado — el sistema funciona con datos públicos de precio)
+
+**1. Cloná el repositorio:**
+```bash
+git clone https://github.com/xnolasc/tortuga-tacana.git
+cd tortuga-tacana
+git checkout pool-real-dennis
+```
+
+**2. Creá y activá un entorno virtual:**
+```bash
+python3 -m venv venv
+source venv/bin/activate      # macOS / Linux
+# venv\Scripts\activate       # Windows
+```
+
+**3. Instalá las dependencias:**
+```bash
+pip install python-binance python-dotenv requests yfinance
+```
+
+**4. (Opcional) Configurá tu API Key de Binance** — solo necesario si
+querés que el sistema lea tu balance real en modo lectura, en vez del
+capital simulado por defecto:
+```bash
+cp .env.example .env
+# editá .env y agregá BINANCE_API_KEY / BINANCE_SECRET_KEY
+# (permisos "Enable Reading" únicamente — nunca "Enable Withdrawals")
+```
+
+**5. Corré el recálculo de niveles (una vez, antes del primer trade):**
+```bash
+python3 crypto_report.py
+```
+
+**6. Corré el trader (modo prueba manual):**
+```bash
+python3 crypto_paper_trader.py
+```
+
+**7. Levantá el dashboard local:**
+```bash
+python3 crypto_dashboard.py
+# abrí http://localhost:8895 en el navegador
+```
+
+Para que el trader corra solo cada cierto tiempo (en vez de ejecutarlo a
+mano), se puede automatizar con `cron` (Linux/macOS) o el Programador de
+Tareas (Windows) — ver `crontab -e` como referencia.
+
+**Todo corre en modo simulado (paper trading) por defecto.** No se
+ejecuta ninguna orden real en Binance a menos que se configure
+explícitamente la API Key con permisos de trading — algo que este
+proyecto todavía no implementa.
+
 ---
 
 ## 🇬🇧 English
@@ -96,6 +157,67 @@ absorb the whole pool, etc.).
 Active project, currently paused temporarily while design adjustments are
 evaluated (capital size vs. number of markets, possible alternative Dual
 Moving Average system to compare results under limited capital).
+
+### 🔧 Installation
+
+**Prerequisites:**
+- Python 3.9 or higher
+- macOS, Linux, or Windows (tested on macOS 12 Monterey)
+- A Binance account (no API Key required to run in simulated mode — the
+  system works with public price data)
+
+**1. Clone the repository:**
+```bash
+git clone https://github.com/xnolasc/tortuga-tacana.git
+cd tortuga-tacana
+git checkout pool-real-dennis
+```
+
+**2. Create and activate a virtual environment:**
+```bash
+python3 -m venv venv
+source venv/bin/activate      # macOS / Linux
+# venv\Scripts\activate       # Windows
+```
+
+**3. Install dependencies:**
+```bash
+pip install python-binance python-dotenv requests yfinance
+```
+
+**4. (Optional) Configure your Binance API Key** — only needed if you
+want the system to read your real balance in read-only mode, instead of
+the default simulated capital:
+```bash
+cp .env.example .env
+# edit .env and add BINANCE_API_KEY / BINANCE_SECRET_KEY
+# ("Enable Reading" permission only — never "Enable Withdrawals")
+```
+
+**5. Run the level recalculation (once, before the first trade):**
+```bash
+python3 crypto_report.py
+```
+
+**6. Run the trader (manual test run):**
+```bash
+python3 crypto_paper_trader.py
+```
+
+**7. Start the local dashboard:**
+```bash
+python3 crypto_dashboard.py
+# open http://localhost:8895 in your browser
+```
+
+To have the trader run automatically on a schedule (instead of running it
+manually), it can be automated with `cron` (Linux/macOS) or Task
+Scheduler (Windows) — see `crontab -e` for reference.
+
+**Everything runs in simulated mode (paper trading) by default.** No real
+order is ever placed on Binance unless the API Key is explicitly
+configured with trading permissions — something this project does not
+implement yet.
 
 ---
 
